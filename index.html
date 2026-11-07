@@ -849,7 +849,7 @@ const DASH_WIDGETS = [
   ['schedule', "Today's schedule", 'm'], ['suggest', 'Smart daily overview', 'm'], ['appointments', 'Upcoming appointments', 'm'], ['deadlines', 'Upcoming deadlines', 'm'],
   ['dates', 'Important dates', 'm'], ['birthdays', 'Upcoming birthdays', 'm'], ['goals', 'Current goals', 'm'], ['longterm', 'Long-term progress', 'm'],
   ['business', 'Active businesses', 'm'], ['bizperf', 'Business performance', 'xl'], ['budget', 'Monthly budget', 'm'], ['payments', 'Upcoming payments', 'm'],
-  ['habits', 'Habit completion', 'm'], ['journal', 'Recent journal', 'm'], ['quicknotes', 'Quick notes', 'm'], ['quote', 'Daily quote', 'm'],
+  ['habits', 'Habit completion', 'm'], ['journal', 'Recent journal', 'm'], ['quicknotes', 'Quick notes', 'm'], ['quote', 'Daily quote', 'm'], ['pinned', 'Pinned items', 'm'], ['quickadd', 'Quick add', 'm'], ['completed', 'Recently completed tasks', 'm'],
   ['weekly', 'Weekly productivity', 'xl'], ['school', 'Exams & assignments', 'm'], ['favorites', 'Favorites & recent', 'm'], ['followups', 'Contact follow-ups', 'm']
 ];
 const Settings = {
@@ -880,6 +880,294 @@ const LANG = {
   de: { 'Dashboard': 'Übersicht', 'My Day': 'Mein Tag', 'Calendar': 'Kalender', 'Notifications': 'Mitteilungen', 'My Journal': 'Mein Tagebuch', 'My Future': 'Meine Zukunft', 'Goals': 'Ziele', 'Habits': 'Gewohnheiten', 'Fitness': 'Fitness', 'Shopping': 'Einkaufen', 'Travel': 'Reisen', 'Business Hub': 'Business-Zentrale', 'Business Ideas': 'Geschäftsideen', 'Projects': 'Projekte', 'Contacts': 'Kontakte', 'Tasks': 'Aufgaben', 'Notes': 'Notizen', 'Documents': 'Dokumente', 'School': 'Schule', 'Finance': 'Finanzen', 'Analytics': 'Analysen', 'Weekly Review': 'Wochenrückblick', 'Monthly Review': 'Monatsrückblick', 'Settings': 'Einstellungen', 'Backup & Restore': 'Sicherung', 'Overview': 'Übersicht', 'Personal Life': 'Privatleben', 'Work & Business': 'Arbeit & Business', 'Organization': 'Organisation', 'Insights': 'Einblicke', 'System': 'System', 'Today': 'Heute', 'Tomorrow': 'Morgen', 'Yesterday': 'Gestern', 'Search': 'Suchen', 'Save': 'Speichern', 'Cancel': 'Abbrechen', 'Delete': 'Löschen', 'Edit': 'Bearbeiten', 'Add': 'Hinzufügen', 'Good morning': 'Guten Morgen', 'Good afternoon': 'Guten Tag', 'Good evening': 'Guten Abend', 'Good night': 'Gute Nacht', 'Quick add': 'Schnell hinzufügen', 'Help': 'Hilfe' },
   fr: { 'Dashboard': 'Tableau de bord', 'My Day': 'Ma journée', 'Calendar': 'Calendrier', 'Notifications': 'Notifications', 'My Journal': 'Mon journal', 'My Future': 'Mon avenir', 'Goals': 'Objectifs', 'Habits': 'Habitudes', 'Fitness': 'Fitness', 'Shopping': 'Achats', 'Travel': 'Voyages', 'Business Hub': 'Centre business', 'Business Ideas': "Idées d'affaires", 'Projects': 'Projets', 'Contacts': 'Contacts', 'Tasks': 'Tâches', 'Notes': 'Notes', 'Documents': 'Documents', 'School': 'École', 'Finance': 'Finances', 'Analytics': 'Analyses', 'Weekly Review': 'Bilan hebdo', 'Monthly Review': 'Bilan mensuel', 'Settings': 'Paramètres', 'Backup & Restore': 'Sauvegarde', 'Overview': 'Aperçu', 'Personal Life': 'Vie personnelle', 'Work & Business': 'Travail & business', 'Organization': 'Organisation', 'Insights': 'Analyses', 'System': 'Système', 'Today': "Aujourd'hui", 'Tomorrow': 'Demain', 'Yesterday': 'Hier', 'Search': 'Rechercher', 'Save': 'Enregistrer', 'Cancel': 'Annuler', 'Delete': 'Supprimer', 'Edit': 'Modifier', 'Add': 'Ajouter', 'Good morning': 'Bonjour', 'Good afternoon': 'Bon après-midi', 'Good evening': 'Bonsoir', 'Good night': 'Bonne nuit', 'Quick add': 'Ajout rapide', 'Help': 'Aide' }
 };
+Object.assign(LANG.de, {
+  'New task': 'Neue Aufgabe',
+  'New event': 'Neuer Termin',
+  'New goal': 'Neues Ziel',
+  'New project': 'Neues Projekt',
+  'New business': 'Neues Unternehmen',
+  'New idea': 'Neue Idee',
+  'New contact': 'Neuer Kontakt',
+  'New habit': 'Neue Gewohnheit',
+  'New reminder': 'Neue Erinnerung',
+  'Add task': 'Aufgabe hinzufügen',
+  'Expense': 'Ausgabe',
+  'Income': 'Einnahme',
+  'Log workout': 'Training erfassen',
+  'Plan a trip': 'Reise planen',
+  'Add item': 'Artikel hinzufügen',
+  'Add book': 'Buch hinzufügen',
+  'Add language': 'Sprache hinzufügen',
+  'Fitness goal': 'Fitnessziel',
+  'Homework / exam': 'Hausaufgabe / Prüfung',
+  'Overview': 'Übersicht',
+  'Entries': 'Einträge',
+  'Life timeline': 'Lebens-Zeitstrahl',
+  'Statistics': 'Statistiken',
+  'Transactions': 'Buchungen',
+  'Budgets': 'Budgets',
+  'Recurring & upcoming': 'Wiederkehrend & fällig',
+  'Savings goals': 'Sparziele',
+  'Reports': 'Berichte',
+  'Planning': 'Planung',
+  'Finances': 'Finanzen',
+  'Projects & tasks': 'Projekte & Aufgaben',
+  'Contacts & meetings': 'Kontakte & Meetings',
+  'Timetable': 'Stundenplan',
+  'Homework & exams': 'Hausaufgaben & Prüfungen',
+  'Grades': 'Noten',
+  'Study hours': 'Lernstunden',
+  'Subjects': 'Fächer',
+  'Courses & skills': 'Kurse & Fähigkeiten',
+  'Habit tracker': 'Gewohnheiten',
+  'Reading': 'Lesen',
+  'Languages': 'Sprachen',
+  'Water & sleep': 'Wasser & Schlaf',
+  'General': 'Allgemein',
+  'Appearance': 'Darstellung',
+  'Currency': 'Währung',
+  'Categories': 'Kategorien',
+  'About': 'Über',
+  'Inbox': 'Posteingang',
+  'History': 'Verlauf',
+  'My reminders': 'Meine Erinnerungen',
+  'Vision & horizons': 'Vision & Horizonte',
+  'Vision board': 'Visionboard',
+  'Future timeline': 'Zukunfts-Zeitstrahl',
+  'Life categories': 'Lebensbereiche',
+  'Personal': 'Persönlich',
+  'Business': 'Business',
+  'Financial': 'Finanziell',
+  'Reports & comparison': 'Berichte & Vergleich',
+  'Active': 'Aktiv',
+  'All': 'Alle',
+  'Archived': 'Archiviert',
+  'Favorites': 'Favoriten',
+  'Pinned': 'Angeheftet',
+  'Recently opened': 'Zuletzt geöffnet',
+  'Follow-ups': 'Nachfassen',
+  'Birthdays': 'Geburtstage',
+  'Completion history': 'Erfolgsverlauf',
+  'Shopping lists': 'Einkaufslisten',
+  'Planned purchases': 'Geplante Käufe',
+  'Wishlist': 'Wunschliste',
+  "Today's priorities": 'Heutige Prioritäten',
+  "Today's tasks": 'Heutige Aufgaben',
+  'Daily completion': 'Tagesfortschritt',
+  "Today's schedule": 'Heutiger Zeitplan',
+  'Smart daily overview': 'Intelligente Tagesübersicht',
+  'Upcoming appointments': 'Anstehende Termine',
+  'Upcoming deadlines': 'Anstehende Fristen',
+  'Important dates': 'Wichtige Daten',
+  'Upcoming birthdays': 'Anstehende Geburtstage',
+  'Current goals': 'Aktuelle Ziele',
+  'Long-term progress': 'Langfristiger Fortschritt',
+  'Active businesses & projects': 'Aktive Unternehmen & Projekte',
+  'Upcoming payments': 'Anstehende Zahlungen',
+  'Recent journal entries': 'Neueste Tagebucheinträge',
+  'Quick notes': 'Schnellnotizen',
+  'Daily quote': 'Zitat des Tages',
+  'Weekly productivity': 'Wochenproduktivität',
+  'Exams & assignments': 'Prüfungen & Aufgaben',
+  'Favorites & recent': 'Favoriten & zuletzt',
+  'Contact follow-ups': 'Kontakte nachfassen',
+  'Pinned items': 'Angeheftete Elemente',
+  'Recently completed tasks': 'Zuletzt erledigte Aufgaben',
+  'Favorites & archive': 'Favoriten & Archiv',
+  'Priorities': 'Prioritäten',
+  'Schedule & time blocks': 'Zeitplan & Zeitblöcke',
+  'Planning suggestions': 'Planungsvorschläge',
+  'Daily goals': 'Tagesziele',
+  'Things to remember': 'Nicht vergessen',
+  'Daily reflection': 'Tagesreflexion',
+  'Weekly planning suggestions': 'Vorschläge für die Wochenplanung',
+  'Monthly achievements': 'Monatliche Erfolge',
+  'Customer statistics': 'Kundenstatistik',
+  'Monthly comparison & growth': 'Monatsvergleich & Wachstum',
+  'Profile': 'Profil',
+  'Open invoices & bills': 'Offene Rechnungen',
+  'My life vision': 'Meine Lebensvision',
+  'Biggest ambitions': 'Größte Ambitionen',
+  'In 1 year': 'In 1 Jahr',
+  'In 3 years': 'In 3 Jahren',
+  'In 5 years': 'In 5 Jahren',
+  'In 10 years': 'In 10 Jahren',
+  'About this goal': 'Über dieses Ziel',
+  'Dependencies': 'Abhängigkeiten',
+  'Details': 'Details',
+  'Activity history': 'Aktivitätsverlauf',
+  'Fitness goals': 'Fitnessziele',
+  'Exercises you train': 'Deine Übungen',
+  'Packing checklist': 'Packliste',
+  'Itinerary': 'Reiseplan',
+  'Activities': 'Aktivitäten',
+  'Spending by category': 'Ausgaben nach Kategorie',
+  'Daily spending': 'Tägliche Ausgaben',
+  'Budget status': 'Budgetstatus',
+  'Savings & projection': 'Sparen & Prognose',
+  'Customize': 'Anpassen',
+  'Plan my day': 'Meinen Tag planen',
+  'Write journal': 'Tagebuch schreiben',
+  'Plan an ambition': 'Ambition planen',
+  'Monthly reflection': 'Monatsreflexion',
+  'Yearly reflection': 'Jahresreflexion',
+  'New entry': 'Neuer Eintrag',
+  'Task': 'Aufgabe',
+  'Event': 'Termin',
+  'Note': 'Notiz',
+  'Journal entry': 'Tagebucheintrag',
+  'Business idea': 'Geschäftsidee',
+  'Project': 'Projekt',
+  'Goal': 'Ziel',
+  'Contact': 'Kontakt',
+  'Reminder': 'Erinnerung',
+  'Quick add': 'Schnell hinzufügen',
+  'Getting started': 'Erste Schritte'
+});
+Object.assign(LANG.fr, {
+  'New task': 'Nouvelle tâche',
+  'New event': 'Nouvel événement',
+  'New goal': 'Nouvel objectif',
+  'New project': 'Nouveau projet',
+  'New business': 'Nouvelle entreprise',
+  'New idea': 'Nouvelle idée',
+  'New contact': 'Nouveau contact',
+  'New habit': 'Nouvelle habitude',
+  'New reminder': 'Nouveau rappel',
+  'Add task': 'Ajouter une tâche',
+  'Expense': 'Dépense',
+  'Income': 'Revenu',
+  'Log workout': 'Enregistrer un entraînement',
+  'Plan a trip': 'Planifier un voyage',
+  'Add item': 'Ajouter un article',
+  'Add book': 'Ajouter un livre',
+  'Add language': 'Ajouter une langue',
+  'Fitness goal': 'Objectif fitness',
+  'Homework / exam': 'Devoir / examen',
+  'Overview': 'Aperçu',
+  'Entries': 'Entrées',
+  'Life timeline': 'Chronologie de vie',
+  'Statistics': 'Statistiques',
+  'Transactions': 'Transactions',
+  'Budgets': 'Budgets',
+  'Recurring & upcoming': 'Récurrent & à venir',
+  'Savings goals': "Objectifs d'épargne",
+  'Reports': 'Rapports',
+  'Planning': 'Planification',
+  'Finances': 'Finances',
+  'Projects & tasks': 'Projets & tâches',
+  'Contacts & meetings': 'Contacts & réunions',
+  'Timetable': 'Emploi du temps',
+  'Homework & exams': 'Devoirs & examens',
+  'Grades': 'Notes scolaires',
+  'Study hours': "Heures d'étude",
+  'Subjects': 'Matières',
+  'Courses & skills': 'Cours & compétences',
+  'Habit tracker': 'Suivi des habitudes',
+  'Reading': 'Lecture',
+  'Languages': 'Langues',
+  'Water & sleep': 'Eau & sommeil',
+  'General': 'Général',
+  'Appearance': 'Apparence',
+  'Currency': 'Devise',
+  'Categories': 'Catégories',
+  'About': 'À propos',
+  'Inbox': 'Boîte de réception',
+  'History': 'Historique',
+  'My reminders': 'Mes rappels',
+  'Vision & horizons': 'Vision & horizons',
+  'Vision board': 'Tableau de vision',
+  'Future timeline': 'Chronologie future',
+  'Life categories': 'Domaines de vie',
+  'Personal': 'Personnel',
+  'Business': 'Business',
+  'Financial': 'Financier',
+  'Reports & comparison': 'Rapports & comparaison',
+  'Active': 'Actifs',
+  'All': 'Tous',
+  'Archived': 'Archivés',
+  'Favorites': 'Favoris',
+  'Pinned': 'Épinglés',
+  'Recently opened': 'Ouverts récemment',
+  'Follow-ups': 'Relances',
+  'Birthdays': 'Anniversaires',
+  'Completion history': 'Historique des réussites',
+  'Shopping lists': 'Listes de courses',
+  'Planned purchases': 'Achats prévus',
+  'Wishlist': 'Liste de souhaits',
+  "Today's priorities": 'Priorités du jour',
+  "Today's tasks": 'Tâches du jour',
+  'Daily completion': 'Progression du jour',
+  "Today's schedule": 'Programme du jour',
+  'Smart daily overview': 'Aperçu intelligent du jour',
+  'Upcoming appointments': 'Rendez-vous à venir',
+  'Upcoming deadlines': 'Échéances à venir',
+  'Important dates': 'Dates importantes',
+  'Upcoming birthdays': 'Anniversaires à venir',
+  'Current goals': 'Objectifs actuels',
+  'Long-term progress': 'Progrès à long terme',
+  'Active businesses & projects': 'Entreprises & projets actifs',
+  'Upcoming payments': 'Paiements à venir',
+  'Recent journal entries': 'Entrées récentes du journal',
+  'Quick notes': 'Notes rapides',
+  'Daily quote': 'Citation du jour',
+  'Weekly productivity': 'Productivité hebdomadaire',
+  'Exams & assignments': 'Examens & devoirs',
+  'Favorites & recent': 'Favoris & récents',
+  'Contact follow-ups': 'Relances de contacts',
+  'Pinned items': 'Éléments épinglés',
+  'Recently completed tasks': 'Tâches terminées récemment',
+  'Favorites & archive': 'Favoris & archives',
+  'Priorities': 'Priorités',
+  'Schedule & time blocks': 'Programme & blocs de temps',
+  'Planning suggestions': 'Suggestions de planification',
+  'Daily goals': 'Objectifs du jour',
+  'Things to remember': 'À ne pas oublier',
+  'Daily reflection': 'Réflexion du jour',
+  'Weekly planning suggestions': 'Suggestions pour la semaine',
+  'Monthly achievements': 'Réussites mensuelles',
+  'Customer statistics': 'Statistiques clients',
+  'Monthly comparison & growth': 'Comparaison mensuelle & croissance',
+  'Profile': 'Profil',
+  'Open invoices & bills': 'Factures ouvertes',
+  'My life vision': 'Ma vision de vie',
+  'Biggest ambitions': 'Plus grandes ambitions',
+  'In 1 year': 'Dans 1 an',
+  'In 3 years': 'Dans 3 ans',
+  'In 5 years': 'Dans 5 ans',
+  'In 10 years': 'Dans 10 ans',
+  'About this goal': 'À propos de cet objectif',
+  'Dependencies': 'Dépendances',
+  'Details': 'Détails',
+  'Activity history': "Historique d'activité",
+  'Fitness goals': 'Objectifs fitness',
+  'Exercises you train': 'Exercices pratiqués',
+  'Packing checklist': 'Liste de bagages',
+  'Itinerary': 'Itinéraire',
+  'Activities': 'Activités',
+  'Spending by category': 'Dépenses par catégorie',
+  'Daily spending': 'Dépenses quotidiennes',
+  'Budget status': 'État du budget',
+  'Savings & projection': 'Épargne & projection',
+  'Customize': 'Personnaliser',
+  'Plan my day': 'Planifier ma journée',
+  'Write journal': 'Écrire le journal',
+  'Plan an ambition': 'Planifier une ambition',
+  'Monthly reflection': 'Réflexion mensuelle',
+  'Yearly reflection': 'Réflexion annuelle',
+  'New entry': 'Nouvelle entrée',
+  'Task': 'Tâche',
+  'Event': 'Événement',
+  'Note': 'Note',
+  'Journal entry': 'Entrée de journal',
+  'Business idea': "Idée d'entreprise",
+  'Project': 'Projet',
+  'Goal': 'Objectif',
+  'Contact': 'Contact',
+  'Reminder': 'Rappel',
+  'Quick add': 'Ajout rapide',
+  'Getting started': 'Bien démarrer'
+});
 const T = s => (LANG[Settings.get('language')] || {})[s] || s;
 
 /* ---------- 03. DOMAIN CONSTANTS ---------- */
@@ -890,7 +1178,7 @@ const TASK_STATUS = opt([['backlog', 'Backlog'], ['todo', 'To Do'], ['inprogress
 const REPEAT = opt([['', 'Does not repeat'], ['daily', 'Daily'], ['weekdays', 'Every weekday (Mon–Fri)'], ['weekly', 'Weekly'], ['biweekly', 'Every 2 weeks'], ['monthly', 'Monthly'], ['quarterly', 'Every 3 months'], ['yearly', 'Yearly']]);
 const EVENT_CATS = opt([['personal', 'Personal', '#6366f1'], ['school', 'School', '#0ea5e9'], ['business', 'Business', '#f59e0b'], ['meeting', 'Meeting', '#8b5cf6'], ['appointment', 'Appointment', '#14b8a6'], ['birthday', 'Birthday', '#ec4899'], ['anniversary', 'Anniversary', '#f43f5e'], ['exam', 'Exam', '#ef4444'], ['deadline', 'Deadline', '#dc2626'], ['travel', 'Travel', '#06b6d4'], ['admin', 'Administrative', '#64748b'], ['payment', 'Payment date', '#22c55e'], ['family', 'Family event', '#a855f7']]);
 const EV_COLOR = Object.fromEntries(EVENT_CATS.map(o => [o.v, o.c]));
-const EVENT_REMIND = opt([['', 'No reminder'], ['0', 'At time of event'], ['10', '10 minutes before'], ['30', '30 minutes before'], ['60', '1 hour before'], ['120', '2 hours before'], ['1440', '1 day before'], ['2880', '2 days before'], ['10080', '1 week before']]);
+const EVENT_REMIND = opt([['', 'No reminder'], ['0', 'At time of event'], ['10', '10 minutes before'], ['30', '30 minutes before'], ['60', '1 hour before'], ['120', '2 hours before'], ['1440', '1 day before'], ['2880', '2 days before'], ['10080', '1 week before'], ['custom', 'Custom time before…']]);
 const LIFE_CATS = ['Career', 'Education', 'Business', 'Financial independence', 'Personal development', 'Health & fitness', 'Lifestyle', 'Travel', 'Family', 'Skills', 'Professional achievements', 'Personal ambitions'];
 const HORIZONS = opt([['today', 'Today'], ['week', 'This week'], ['month', 'This month'], ['3m', '3 months'], ['6m', '6 months'], ['1y', '1 year'], ['3y', '3 years'], ['5y', '5 years'], ['10y', '10 years']]);
 const GOAL_STATUS = opt([['notstarted', 'Not started'], ['active', 'In progress'], ['onhold', 'On hold'], ['achieved', 'Achieved'], ['abandoned', 'Abandoned']]);
@@ -1011,8 +1299,8 @@ const SCHEMA = {
     { k: 'location', l: 'Location', t: 'text' },
     { k: 'description', l: 'Description', t: 'textarea', full: 1, rows: 3 },
     { k: 'repeat', l: 'Repeat', t: 'select', o: REPEAT }, { k: 'repeatUntil', l: 'Repeat until', t: 'date', showIf: v => !!v.repeat },
-    { k: 'reminder', l: 'Reminder', t: 'select', o: EVENT_REMIND },
-    { k: 'important', l: 'Important date (show countdown on dashboard)', t: 'check', full: 1 },
+    { k: 'reminder', l: 'Reminder', t: 'select', o: EVENT_REMIND }, { k: 'reminderMins', l: 'Minutes before (custom)', t: 'number', min: 0, def: 45, showIf: v => v.reminder === 'custom', hint: 'e.g. 45 = 45 minutes, 180 = 3 hours, 4320 = 3 days' },
+    { k: 'important', l: 'Important date (show countdown on dashboard)', t: 'check', full: 1 }, { k: 'pinned', l: 'Pin to dashboard', t: 'check' }, { k: 'fav', l: 'Favorite', t: 'check' },
     { s: 'Connections' },
     { k: 'projectId', l: 'Project', t: 'select', o: refOpts('projects') }, { k: 'businessId', l: 'Business', t: 'select', o: refOpts('businesses') },
     { k: 'goalId', l: 'Goal', t: 'select', o: refOpts('goals') }, { k: 'contactId', l: 'Contact', t: 'select', o: refOpts('contacts') }
@@ -1080,7 +1368,7 @@ const SCHEMA = {
   ideas: { label: 'Business idea', icon: 'bulb', fields: [
     { k: 'title', l: 'Idea title', t: 'text', req: 1, full: 1 },
     { k: 'description', l: 'Description', t: 'textarea', full: 1, rows: 3 },
-    { k: 'industry', l: 'Industry', t: 'text' }, { k: 'tags', l: 'Tags / categories', t: 'tags', c: 'ideas' },
+    { k: 'industry', l: 'Industry', t: 'text' }, { k: 'category', l: 'Idea category', t: 'text', list: 'ideacats', ph: 'e.g. Service, Product, Online' }, { k: 'difficulty', l: 'Difficulty', t: 'select', o: () => opt([['', '— Not set —'], ['1', 'Very easy'], ['2', 'Easy'], ['3', 'Medium'], ['4', 'Hard'], ['5', 'Very hard']]) }, { k: 'tags', l: 'Tags', t: 'tags', c: 'ideas' },
     { k: 'status', l: 'Status', t: 'select', o: IDEA_STATUS, def: 'new' }, { k: 'priority', l: 'Priority', t: 'select', o: PRIORITIES, def: 'medium' },
     { k: 'problem', l: 'Problem being solved', t: 'textarea', full: 1, rows: 2 },
     { k: 'customers', l: 'Potential customers', t: 'textarea', rows: 2 }, { k: 'competitors', l: 'Competitors', t: 'textarea', rows: 2 },
@@ -1395,7 +1683,7 @@ const Form = {
     return `<div class="field ${wide ? 'full' : ''}" data-k="${f.k}">${f.t === 'check' ? '' : `<label for="${id}">${U.esc(f.l)}${f.req ? ' <span class="neg">*</span>' : ''}</label>`}${inner}${f.hint ? `<div class="hint">${U.esc(f.hint)}</div>` : ''}</div>`;
   },
   datalist(name) {
-    const src = { folders: () => Store.all('notes').map(n => n.folder), shoplists: () => ['Groceries', 'Household', 'Personal', ...Store.all('shopping').map(s => s.list)] }[name];
+    const src = { folders: () => Store.all('notes').map(n => n.folder), ideacats: () => ['Service', 'Product', 'Online', 'Retail', 'Automotive', ...Store.all('ideas').map(i => i.category)], shoplists: () => ['Groceries', 'Household', 'Personal', ...Store.all('shopping').map(s => s.list)] }[name];
     return `<datalist id="dl_${name}">${[...new Set((src ? src() : []).filter(Boolean))].map(x => `<option value="${U.attr(x)}">`).join('')}</datalist>`;
   },
   tagsHtml(tags) { return tags.map((t, i) => `<span class="tag">${U.esc(t)}<button type="button" data-tag-rm="${i}" aria-label="Remove">×</button></span>`).join(''); },
@@ -1523,10 +1811,10 @@ const Chart = {
     const h = spec.height || 200, padL = 46, padB = 24, padT = 10, padR = 8;
     const all = spec.series.flatMap(s => s.values.map(Number).filter(isFinite));
     let max = spec.stacked ? Math.max(0, ...spec.labels.map((_, i) => U.sum(spec.series, s => Math.max(0, s.values[i] || 0)))) : Math.max(0, ...all);
-    let min = Math.min(0, ...all); max = this.nice(max || 1); if (min < 0) min = -this.nice(-min);
+    let min = Math.min(0, ...all); const ystep = this.nice(((max || 1) - min) / 4); max = Math.max(ystep, Math.ceil(max / ystep) * ystep); min = Math.floor(min / ystep) * ystep; const nT = Math.round((max - min) / ystep);
     const ih = h - padT - padB, iw = w - padL - padR; const y = v => padT + ih - ((v - min) / (max - min)) * ih;
     const fmt = spec.fmt || (v => Money.short(v)); let g = '';
-    for (let i = 0; i <= 4; i++) { const v = min + (max - min) * i / 4; g += `<line class="grid-l" x1="${padL}" x2="${w - padR}" y1="${y(v)}" y2="${y(v)}"/><text x="${padL - 6}" y="${y(v) + 3}" text-anchor="end">${U.esc(fmt(v))}</text>`; }
+    for (let i = 0; i <= nT; i++) { const v = min + ystep * i; g += `<line class="grid-l" x1="${padL}" x2="${w - padR}" y1="${y(v)}" y2="${y(v)}"/><text x="${padL - 6}" y="${y(v) + 3}" text-anchor="end">${U.esc(fmt(v))}</text>`; }
     const step = iw / spec.labels.length; const every = Math.ceil(spec.labels.length / Math.max(1, Math.floor(iw / 46)));
     spec.labels.forEach((l, i) => { if (i % every === 0) g += `<text x="${padL + step * i + step / 2}" y="${h - 6}" text-anchor="middle">${U.esc(l)}</text>`; });
     return { h, padL, padT, iw, ih, y, step, g, min, max };
@@ -1871,13 +2159,16 @@ const Notify = {
     const now = new Date(), nowMs = now.getTime(), td = D.today(), nt = D.nowTime(); const n = Settings.get('notif'); this.dirty = false;
     Store.all('reminders').forEach(r => {
       if (r.done || !r.date || !r.time) return;
-      const at = r.snoozedUntil && r.snoozedUntil > 0 ? r.snoozedUntil : D.dt(r.date, r.time).getTime();
-      if (at <= nowMs) this.push(`rem:${r.id}:${r.date}:${r.snoozedUntil || 0}`, '🔔 ' + r.title, labelOf(REMINDER_TYPES, r.type) + (r.note ? ' · ' + r.note : ''), { c: 'reminders', id: r.id });
+      let occ = r.date;
+      if (r.repeat && r.date <= td) { const occs = Recur.between(r.date, r.repeat, r.date < D.add(td, -40) ? D.add(td, -40) : r.date, td); if (occs.length) { occ = occs[occs.length - 1]; if (occ === td && r.time > nt && occs.length > 1) occ = occs[occs.length - 2]; } }
+      const base = D.dt(occ, r.time).getTime(); const snz = r.snoozedUntil && r.snoozedUntil > base ? r.snoozedUntil : 0;
+      const at = snz || base;
+      if (at <= nowMs) this.push(`rem:${r.id}:${occ}:${snz}`, '🔔 ' + r.title, labelOf(REMINDER_TYPES, r.type) + (r.note ? ' · ' + r.note : ''), { c: 'reminders', id: r.id });
     });
     Tasks.active().forEach(t => { if (!Tasks.isDone(t) && t.reminder) { const at = t.snoozedUntil || new Date(t.reminder).getTime(); if (at && at <= nowMs) this.push(`task:${t.id}:${t.reminder}:${t.snoozedUntil || 0}`, '✓ Task reminder: ' + t.title, t.due ? 'Due ' + D.smart(t.due) + (t.dueTime ? ' at ' + D.time(t.dueTime) : '') : '', { c: 'tasks', id: t.id }); } });
     Events.occurrences(D.add(td, -1), D.add(td, 8)).forEach(e => {
       if (e.reminder === '' || e.reminder == null) return;
-      const start = D.dt(e.occStart, e.allDay ? '09:00' : (e.start || '09:00')).getTime(); const at = start - Number(e.reminder) * 60000;
+      const start = D.dt(e.occStart, e.allDay ? '09:00' : (e.start || '09:00')).getTime(); const at = start - (e.reminder === 'custom' ? Number(e.reminderMins || 0) : Number(e.reminder)) * 60000;
       if (at <= nowMs && start + 3600000 > nowMs && e.dayIndex === 0) this.push(`ev:${e.id}:${e.occStart}`, '📅 ' + e.title, (e.allDay ? 'All day' : D.time(e.start)) + ' · ' + D.smart(e.occStart) + (e.location ? ' · ' + e.location : ''), { c: 'events', id: e.id });
     });
     Habits.active().forEach(h => { if (h.reminderTime && Habits.scheduled(h, td) && !Habits.done(h, td) && h.reminderTime <= nt) this.push(`hab:${h.id}:${td}`, '🔁 Habit: ' + h.name, h.target || 'Keep your streak going', { c: 'habits', id: h.id }); });
@@ -1907,7 +2198,7 @@ const Notify = {
   },
   complete(nid) {
     const n = Store.get('notifications', nid); if (!n) return;
-    if (n.src && n.src.c === 'reminders') { const r = Store.get('reminders', n.src.id); if (r) { if (r.repeat) { Store.update('reminders', r.id, { date: Recur.next(r.date, r.repeat), snoozedUntil: 0 }); } else Store.update('reminders', r.id, { done: true }); } }
+    if (n.src && n.src.c === 'reminders') { const r = Store.get('reminders', n.src.id); if (r) { if (r.repeat) { let nx = Recur.next(r.date, r.repeat); while (nx && nx <= D.today()) nx = Recur.next(nx, r.repeat); Store.update('reminders', r.id, { date: nx, snoozedUntil: 0 }); } else Store.update('reminders', r.id, { done: true }); } }
     if (n.src && n.src.c === 'tasks') { const t = Store.get('tasks', n.src.id); if (t && !Tasks.isDone(t)) Tasks.toggle(t.id); }
     if (n.src && n.src.c === 'habits') { const h = Store.get('habits', n.src.id); if (h && !Habits.done(h, D.today())) Habits.toggle(h.id, D.today()); }
     if (n.src && n.src.c === 'bills') Finance.payBill(n.src.id);
@@ -1975,7 +2266,7 @@ const NAV = [
   ['Insights', [['analytics', 'Analytics', 'chart'], ['weekly', 'Weekly Review', 'review'], ['monthly', 'Monthly Review', 'calcheck']]],
   ['System', [['settings', 'Settings', 'settings'], ['backup', 'Backup & Restore', 'database']]]
 ];
-const NAV_FLAT = NAV.flatMap(g => g[1]);
+const NAV_FLAT = [...NAV.flatMap(g => g[1]), ['library', 'Favorites & archive', 'star']];
 
 const Router = {
   cur: null,
@@ -2017,7 +2308,7 @@ const App = {
     $('#sidebar').innerHTML = `<div class="sb-head"><div class="logo">${I('compass', 'sm')}</div><div class="brand">My Life OS<small>${U.esc(Settings.get('name') ? Settings.get('name') + '’s operating system' : 'Personal operating system')}</small></div><button class="btn ghost icon sm right menu-btn" data-a="nav-close" aria-label="Close menu">${I('x')}</button></div>
       <div class="sb-search" data-a="search" role="button" tabindex="0">${I('search', 'sm')}<span class="grow">${T('Search')}…</span><span class="kbd">Ctrl K</span></div>
       <nav class="sb-nav">${NAV.map(([g, items]) => `<div class="nav-group ${col[g] ? 'collapsed' : ''}" data-g="${U.attr(g)}"><button class="nav-group-h" data-a="nav-group" data-g="${U.attr(g)}">${U.esc(T(g))}${I('down', 'sm')}</button><div class="nav-items">${items.map(([k, l, ic]) => `<a class="nav-item" href="#/${k}" data-nav="${k}">${I(ic)}<span>${U.esc(T(l))}</span><span class="count hidden" data-count="${k}"></span></a>`).join('')}</div></div>`).join('')}</nav>
-      <div class="sb-foot"><div class="save-ind saved" id="saveInd"><i class="dot"></i><span>All changes saved</span></div><button class="btn ghost icon sm right" data-a="help" title="Getting started">${I('help', 'sm')}</button></div>`;
+      <div class="sb-foot"><div class="save-ind saved" id="saveInd"><i class="dot"></i><span>All changes saved</span></div><a class="btn ghost icon sm right" href="#/library" title="Favorites, pinned & archive" aria-label="Favorites and archive">${I('star', 'sm')}</a><button class="btn ghost icon sm" data-a="help" title="Getting started">${I('help', 'sm')}</button></div>`;
   },
   nav(r) { $$('.nav-item').forEach(a => a.classList.toggle('active', a.dataset.nav === r.name)); },
   badges() {
@@ -2202,7 +2493,7 @@ Object.assign(A, {
       { l: 'Move to today', icon: 'sun', a: () => Store.update('tasks', t.id, { due: td }) },
       { l: 'Postpone to tomorrow', icon: 'arrow', a: () => Tasks.postpone(t.id, 1) },
       { l: 'Postpone 1 week', icon: 'calendar', a: () => Tasks.postpone(t.id, 7) },
-      { l: 'Duplicate', icon: 'copy', a: () => Tasks.duplicate(t.id) },
+      { l: 'Duplicate', icon: 'copy', a: () => Tasks.duplicate(t.id) }, { l: t.pinned ? 'Unpin from dashboard' : 'Pin to dashboard', icon: 'pin', a: () => Records.toggle('tasks', t.id, 'pinned') }, { l: t.fav ? 'Remove from favorites' : 'Add to favorites', icon: 'star', a: () => Records.toggle('tasks', t.id, 'fav') },
       '-',
       ...TASK_STATUS.filter(s => s.v !== t.status).map(s => ({ l: 'Status: ' + s.l, icon: 'kanban', a: () => s.v === 'done' ? Tasks.toggle(t.id) : Store.update('tasks', t.id, { status: s.v, doneAt: null }) })),
       '-',
@@ -2246,18 +2537,18 @@ function bindGlobal() {
 
 /* small render helpers shared by views */
 const H = {
-  head(title, sub, actions = '') { return `<div class="page-head"><div><h1>${U.esc(title)}</h1>${sub ? `<p>${sub}</p>` : ''}</div><div class="row wrap">${actions}</div></div>`; },
-  card(title, body, { icon, actions = '', cls = '', pad = true } = {}) { return `<div class="card ${cls}">${title ? `<div class="card-h"><h3>${icon ? I(icon, 'sm') : ''}${title}</h3><div class="actions">${actions}</div></div>` : ''}<div class="${pad ? 'card-b' : ''}">${body}</div></div>`; },
+  head(title, sub, actions = '') { return `<div class="page-head"><div><h1>${U.esc(T(title))}</h1>${sub ? `<p>${sub}</p>` : ''}</div><div class="row wrap">${actions}</div></div>`; },
+  card(title, body, { icon, actions = '', cls = '', pad = true } = {}) { if (title && !/[<·]/.test(title)) title = U.esc(T(title)); return `<div class="card ${cls}">${title ? `<div class="card-h"><h3>${icon ? I(icon, 'sm') : ''}${title}</h3><div class="actions">${actions}</div></div>` : ''}<div class="${pad ? 'card-b' : ''}">${body}</div></div>`; },
   stat(label, value, sub = '', icon = '', cls = '') { return `<div class="card stat"><div class="lbl">${icon ? I(icon, 'sm') : ''}${U.esc(label)}</div><div class="val ${cls}">${value}</div>${sub ? `<div class="sub">${sub}</div>` : ''}</div>`; },
   empty(text, icon = 'inbox', btn = '') { return `<div class="empty">${I(icon)}<div>${text}</div>${btn}</div>`; },
-  tabs(list, cur, action = 'tab', extra = '') { return `<div class="tabs">${list.map(([k, l]) => `<button class="${k === cur ? 'on' : ''}" data-a="${action}" data-v="${k}" ${extra}>${U.esc(l)}</button>`).join('')}</div>`; },
+  tabs(list, cur, action = 'tab', extra = '') { return `<div class="tabs">${list.map(([k, l]) => `<button class="${k === cur ? 'on' : ''}" data-a="${action}" data-v="${k}" ${extra}>${U.esc(String(l).replace(/^([^(]+?)(\s*\(.*)?$/, (m, a, b) => T(a) + (b || '')))}</button>`).join('')}</div>`; },
   seg(list, cur, action, extra = '') { return `<div class="btn-group">${list.map(([k, l]) => `<button class="${k === cur ? 'on' : ''}" data-a="${action}" data-v="${k}" ${extra}>${l}</button>`).join('')}</div>`; },
   chips(list, cur, action) { return `<div class="chips">${list.map(([k, l, n]) => `<button class="chip ${k === cur ? 'on' : ''}" data-a="${action}" data-v="${U.attr(k)}">${U.esc(l)}${n != null ? `<span class="n">${n}</span>` : ''}</button>`).join('')}</div>`; },
   search(id, val, ph = 'Search…', key = 'q') { return `<div class="search-in">${I('search', 'sm')}<input class="input" id="${id}" value="${U.attr(val || '')}" placeholder="${U.attr(ph)}" data-in="uiq" data-key="${key}"></div>`; },
   select(name, opts, cur, attrs = '') { return `<select class="select sm" style="width:auto" ${attrs}>${opts.map(o => { o = typeof o === 'object' ? o : { v: o, l: o }; return `<option value="${U.attr(o.v)}" ${String(o.v) === String(cur ?? '') ? 'selected' : ''}>${U.esc(o.l)}</option>`; }).join('')}</select>`; },
   money(n, cur, cls = '') { return `<span class="num ${cls}">${Money.fmt(n, cur)}</span>`; },
   countdown(date) { const n = D.diff(D.today(), date); return `<div class="countdown"><b>${n <= 0 ? (n === 0 ? '0' : '—') : n}</b><span>${n === 1 ? 'day' : 'days'}</span></div>`; },
-  btnAdd(c, label, def, cls = 'primary') { return `<button class="btn ${cls}" data-a="add" data-c="${c}" ${def ? `data-def='${U.attr(JSON.stringify(def))}'` : ''}>${I('plus', 'sm')}${U.esc(label)}</button>`; },
+  btnAdd(c, label, def, cls = 'primary') { return `<button class="btn ${cls}" data-a="add" data-c="${c}" ${def ? `data-def='${U.attr(JSON.stringify(def))}'` : ''}>${I('plus', 'sm')}${U.esc(T(label))}</button>`; },
   rowActions(c, id, extra = '') { return `<div class="li-actions">${extra}<button class="btn ghost icon xs" data-a="edit" data-c="${c}" data-id="${id}" title="Edit">${I('edit', 'sm')}</button><button class="btn ghost icon xs" data-a="del" data-c="${c}" data-id="${id}" title="Delete">${I('trash', 'sm')}</button></div>`; }
 };
 /* generic search box handler: updates UI[view][key] and re-renders */
@@ -2293,6 +2584,32 @@ Object.assign(A, {
   'pick-priorities': el => DayView.pickPriorities(el.dataset.d || D.today())
 });
 CH.reflection = el => { DayPlan.update(el.dataset.d, { reflection: el.value }, { silent: true }); Toast.show('Reflection saved'); };
+
+/* =============================== FAVORITES, PINNED, RECENT & ARCHIVE =============================== */
+const FAV_C = ['tasks', 'events', 'notes', 'goals', 'projects', 'businesses', 'ideas', 'contacts', 'documents', 'trips'];
+const ARCH_C = ['tasks', 'notes', 'goals', 'projects', 'businesses', 'ideas', 'habits'];
+const cLabel = c => ({ tasks: 'Task', events: 'Event', notes: 'Note', goals: 'Goal', projects: 'Project', businesses: 'Business', ideas: 'Idea', contacts: 'Contact', documents: 'Document', trips: 'Trip', habits: 'Habit' }[c] || c);
+const cIcon = c => (SEARCH_SRC.find(x => x[0] === c) || [, , 'file'])[2];
+const PinUI = { btns: (c, it) => `<button class="btn ghost icon" data-a="fav" data-c="${c}" data-id="${it.id}" title="${it.fav ? 'Remove from favorites' : 'Add to favorites'}" style="${it.fav ? 'color:var(--warning)' : ''}">${I('star', 'sm')}</button><button class="btn ghost icon" data-a="pin" data-c="${c}" data-id="${it.id}" title="${it.pinned ? 'Unpin from dashboard' : 'Pin to dashboard'}" style="${it.pinned ? 'color:var(--accent)' : ''}">${I('pin', 'sm')}</button>` };
+V.library = {
+  title: () => T('Favorites & archive'),
+  render(r) {
+    const s = ui('library', { tab: 'fav' }); if (r.q.tab) { s.tab = r.q.tab; history.replaceState(null, '', '#/library'); }
+    const row = (c, x, extra) => `<div class="li"><div class="doc-thumb">${I(cIcon(c), 'sm')}</div><div class="li-main" data-a="open" data-c="${c}" data-id="${x.id}" style="cursor:pointer"><div class="li-title"><span class="t">${U.esc(titleOf(c, x))}</span><span class="badge">${cLabel(c)}</span></div><div class="li-sub">Updated ${D.ago(x.updatedAt || x.createdAt)}</div></div><div class="row gap-4">${extra}</div></div>`;
+    const items = [];
+    if (s.tab === 'fav') FAV_C.forEach(c => Store.all(c).filter(x => x.fav).forEach(x => items.push(row(c, x, `<button class="btn xs" data-a="fav" data-c="${c}" data-id="${x.id}">${I('star', 'sm')}Unfavorite</button>`))));
+    if (s.tab === 'pinned') FAV_C.forEach(c => Store.all(c).filter(x => x.pinned).forEach(x => items.push(row(c, x, `<button class="btn xs" data-a="pin" data-c="${c}" data-id="${x.id}">${I('pin', 'sm')}Unpin</button>`))));
+    if (s.tab === 'recent') Recent.list(25).forEach(x => items.push(row(x.c, x.item, `<span class="tiny faint">${D.ago(x.ts)}</span>`)));
+    if (s.tab === 'archived') ARCH_C.forEach(c => Store.all(c).filter(x => x.archived).forEach(x => items.push(row(c, x, `<button class="btn xs" data-a="archive" data-c="${c}" data-id="${x.id}">${I('undo', 'sm')}Restore</button><button class="btn ghost icon xs" data-a="del" data-c="${c}" data-id="${x.id}" title="Delete permanently">${I('trash', 'sm')}</button>`))));
+    const done = s.tab === 'completed' ? U.sortBy(Store.all('tasks').filter(t => t.status === 'done' && t.doneAt), t => t.doneAt, -1).slice(0, 150) : [];
+    const count = c => FAV_C.reduce((n, k) => n + Store.all(k).filter(c).length, 0);
+    return `${H.head(T('Favorites & archive'), 'Everything you starred, pinned, opened recently, archived or completed — in one place.', '')}
+      ${H.tabs([['fav', `Favorites (${count(x => x.fav)})`], ['pinned', `Pinned (${count(x => x.pinned)})`], ['recent', 'Recently opened'], ['completed', 'Recently completed tasks'], ['archived', `Archived (${ARCH_C.reduce((n, c) => n + Store.all(c).filter(x => x.archived).length, 0)})`]], s.tab, 'set', 'data-k="tab"')}
+      ${s.tab === 'completed' ? H.card('', TaskUI.list(done, { empty: 'No completed tasks yet.' }), { pad: false }) : H.card('', items.length ? `<div class="list">${items.join('')}</div>` : H.empty({ fav: 'Use the ★ icon on tasks, notes, goals, projects, businesses, ideas, contacts, documents and trips.', pinned: 'Use the pin icon to put important items on your dashboard.', recent: 'Items you open appear here.', archived: 'Archived items appear here and can be restored.' }[s.tab], 'star'), { pad: false })}`;
+  }
+};
+A['pin-info'] = el => { const v = el.value.trim(); if (!v) return; Store.add('notes', { title: U.trunc(v, 80), content: `<p>${U.esc(v)}</p>`, category: 'Important information', pinned: true, tags: [], folder: '' }); el.value = ''; Toast.show('Pinned to your dashboard'); };
+A.qa = el => { const q = QUICK.find(x => x[0] === el.dataset.q); if (q) q[3](); };
 
 /* =============================== DASHBOARD =============================== */
 const Dash = {
@@ -2344,7 +2661,10 @@ const Dash = {
       return { title: 'Weekly productivity', icon: 'chart', link: '#/analytics', body: `<div class="grid g4" style="gap:8px;margin-bottom:8px"><div><div class="tiny faint">Tasks done</div><b class="num">${thisW}</b> <span class="tiny ${thisW >= lastW ? 'pos' : 'neg'}">${thisW >= lastW ? '▲' : '▼'} ${Math.abs(thisW - lastW)} vs last wk</span></div><div><div class="tiny faint">Habits</div><b class="num">${hr}%</b></div><div><div class="tiny faint">Study</div><b class="num">${Math.round(School.minutes(ws, D.add(ws, 6)) / 6) / 10}h</b></div><div><div class="tiny faint">Journal</div><b class="num">${Store.all('journal').filter(j => j.date >= ws && j.date <= D.add(ws, 6)).length}</b></div></div>` + Chart.mount('bar', { labels: days.map(d => D.fmt(d, 'wd')), series: [{ name: 'Tasks completed', values: days.map(doneOn) }], height: 150, fmt: v => Math.round(v), tip: v => v + ' tasks' }) };
     },
     school() { const s = School.upcoming(21).slice(0, 6); return { title: 'Exams & assignments', icon: 'school', link: '#/school', body: s.length ? s.map(x => { const sub = Store.get('subjects', x.subjectId); return `<div class="mini-li" style="cursor:pointer" data-a="edit" data-c="schoolItems" data-id="${x.id}"><i class="cdot" style="background:${(sub && sub.color) || 'var(--accent)'}"></i><span class="t">${x.type === 'exam' ? '📝 ' : ''}${U.esc(x.title)}</span><span class="small ${x.due < D.today() ? 'neg' : 'faint'}">${D.smart(x.due)}</span></div>`; }).join('') : H.empty('No upcoming school deadlines.', 'school') }; },
-    favorites() { const favs = []; ['notes', 'contacts', 'ideas', 'documents', 'goals', 'projects'].forEach(c => Store.all(c).filter(x => x.fav || (c === 'notes' && x.pinned)).forEach(x => favs.push({ c, x }))); const rec = Recent.list(5); return { title: 'Favorites & recent', icon: 'star', body: (favs.length ? favs.slice(0, 6).map(f => `<div class="mini-li" style="cursor:pointer" data-a="open" data-c="${f.c}" data-id="${f.x.id}">${I('star', 'sm')}<span class="t">${U.esc(titleOf(f.c, f.x))}</span><span class="tiny faint">${f.c}</span></div>`).join('') : '<div class="small faint">Star items to keep them here.</div>') + (rec.length ? `<div class="divider"></div><div class="tiny faint mb-8">Recently opened</div>` + rec.map(r => `<div class="mini-li" style="cursor:pointer" data-a="open" data-c="${r.c}" data-id="${r.id}">${I('history', 'sm')}<span class="t">${U.esc(titleOf(r.c, r.item))}</span><span class="tiny faint">${D.ago(r.ts)}</span></div>`).join('') : '') }; },
+    pinned() { const its = []; FAV_C.forEach(c => Store.all(c).filter(x => x.pinned && !x.archived).forEach(x => its.push({ c, x }))); return { title: 'Pinned items', icon: 'pin', link: '#/library?tab=pinned', body: its.slice(0, 8).map(({ c, x }) => `<div class="mini-li" style="cursor:pointer" data-a="open" data-c="${c}" data-id="${x.id}">${I(cIcon(c), 'sm')}<span class="t">${U.esc(titleOf(c, x))}</span><span class="tiny faint">${cLabel(c)}</span></div>`).join('') + `<input class="input sm mt-8" placeholder="Pin important information… (Enter)" data-enter="pin-info" id="pinInfo"><div class="tiny faint mt-8">Or use the ${I('pin', 'sm')} icon on tasks, goals, projects, businesses, notes, trips and events.</div>` }; },
+    quickadd() { return { title: 'Quick add', icon: 'plus', body: `<div class="grid g3" style="gap:6px">${QUICK.map(([k, l, ic]) => `<button class="btn sm" style="justify-content:flex-start" data-a="qa" data-q="${k}">${I(ic, 'sm')}<span class="ellipsis">${U.esc(T(l))}</span></button>`).join('')}</div>` }; },
+    completed() { const ts = U.sortBy(Store.all('tasks').filter(t => t.status === 'done' && t.doneAt), t => t.doneAt, -1).slice(0, 6); return { title: 'Recently completed tasks', icon: 'check', link: '#/library?tab=completed', pad: false, body: ts.length ? TaskUI.list(ts) : H.empty('Completed tasks will appear here.', 'check') }; },
+    favorites() { const favs = []; FAV_C.forEach(c => Store.all(c).filter(x => x.fav || (c === 'notes' && x.pinned)).forEach(x => favs.push({ c, x }))); const rec = Recent.list(5); return { title: 'Favorites & recent', icon: 'star', link: '#/library', body: (favs.length ? favs.slice(0, 6).map(f => `<div class="mini-li" style="cursor:pointer" data-a="open" data-c="${f.c}" data-id="${f.x.id}">${I('star', 'sm')}<span class="t">${U.esc(titleOf(f.c, f.x))}</span><span class="tiny faint">${f.c}</span></div>`).join('') : '<div class="small faint">Star items to keep them here.</div>') + (rec.length ? `<div class="divider"></div><div class="tiny faint mb-8">Recently opened</div>` + rec.map(r => `<div class="mini-li" style="cursor:pointer" data-a="open" data-c="${r.c}" data-id="${r.id}">${I('history', 'sm')}<span class="t">${U.esc(titleOf(r.c, r.item))}</span><span class="tiny faint">${D.ago(r.ts)}</span></div>`).join('') : '') }; },
     followups() { const f = Contacts.followUps().slice(0, 5); return { title: 'Contact follow-ups', icon: 'users', link: '#/contacts', body: f.length ? f.map(c => `<div class="mini-li" style="cursor:pointer" data-a="open" data-c="contacts" data-id="${c.id}"><span class="t">${U.esc(c.name)}</span><span class="small ${c.nextFollowUp < D.today() ? 'neg' : 'faint'}">${D.smart(c.nextFollowUp)}</span></div>`).join('') : H.empty('No follow-ups due.', 'users') }; }
   },
   order() { const d = Settings.get('dash'); const pinned = d.pinned || []; return [...d.order.filter(k => pinned.includes(k)), ...d.order.filter(k => !pinned.includes(k))]; },
@@ -2377,7 +2697,7 @@ V.dashboard = {
         let w; try { w = Dash.W[k](); } catch (e) { console.error(e); w = { title: k, body: '<div class="empty">Widget error</div>' }; }
         const hidden = d.hidden.includes(k), pinned = (d.pinned || []).includes(k); const name = (DASH_WIDGETS.find(x => x[0] === k) || [])[1];
         const ctrl = `<div class="w-ctrl"><button class="btn ghost icon xs" data-a="dash-move" data-k="${k}" data-dir="-1" title="Move earlier">${I('left', 'sm')}</button><button class="btn ghost icon xs" data-a="dash-move" data-k="${k}" data-dir="1" title="Move later">${I('right', 'sm')}</button><button class="btn ghost xs" data-a="dash-size" data-k="${k}" title="Change size">${Dash.size(k).toUpperCase()}</button><button class="btn ghost icon xs" data-a="dash-pin" data-k="${k}" title="${pinned ? 'Unpin' : 'Pin to top'}" style="${pinned ? 'color:var(--accent)' : ''}">${I('pin', 'sm')}</button><button class="btn ghost icon xs" data-a="dash-hide" data-k="${k}" title="${hidden ? 'Show' : 'Hide'}">${I(hidden ? 'eye' : 'x', 'sm')}</button></div>`;
-        return `<section class="card widget s-${Dash.size(k)} ${pinned ? 'pinned' : ''} ${hidden ? 'hidden-w' : ''}" ${s.edit ? `draggable="true" data-drag="widget"` : ''} data-id="${k}">${ctrl}${w.title || s.edit ? `<div class="card-h"><h3>${w.icon ? I(w.icon, 'sm') : ''}${U.esc(w.title || name)}</h3><div class="actions">${s.edit ? '' : (w.actions || '') + (w.link ? `<a class="btn ghost icon xs" href="${w.link}" title="Open">${I('arrow', 'sm')}</a>` : '')}</div></div>` : ''}<div class="${w.pad === false ? '' : 'card-b'}" style="${k === 'hero' ? 'padding:22px 22px' : ''}">${w.body}</div></section>`;
+        return `<section class="card widget s-${Dash.size(k)} ${pinned ? 'pinned' : ''} ${hidden ? 'hidden-w' : ''}" ${s.edit ? `draggable="true" data-drag="widget"` : ''} data-id="${k}">${ctrl}${w.title || s.edit ? `<div class="card-h"><h3>${w.icon ? I(w.icon, 'sm') : ''}${U.esc(T(w.title || name))}</h3><div class="actions">${s.edit ? '' : (w.actions || '') + (w.link ? `<a class="btn ghost icon xs" href="${w.link}" title="Open">${I('arrow', 'sm')}</a>` : '')}</div></div>` : ''}<div class="${w.pad === false ? '' : 'card-b'}" style="${k === 'hero' ? 'padding:22px 22px' : ''}">${w.body}</div></section>`;
       }).join('')}</div>`;
   },
   after() {
@@ -2494,7 +2814,7 @@ V.tasks = {
       body = Object.keys(g).length ? Object.entries(g).map(([id, ts]) => { const it = Store.get(col, id); const p = Tasks.progress(ts); return H.card(`<a href="#/${s.v === 'project' ? 'projects' : 'business'}/${id}">${U.esc(titleOf(col, it) || 'Deleted')}</a> <span class="faint small">${p.d}/${p.n}</span>`, TaskUI.list(ts, { noProject: s.v === 'project', noBiz: s.v === 'business' }), { pad: false, cls: 'mb-16', actions: `<div style="width:120px">${Chart.progress(p.pct)}</div>` }); }).join('') : H.empty(`No tasks are linked to a ${s.v} yet.`, s.v === 'project' ? 'projects' : 'briefcase');
     } else {
       const defs = { today: { due: D.today() }, tomorrow: { due: D.add(D.today(), 1) }, priority: { priority: 'high' } }[s.v] || {};
-      body = H.card('', (['archived', 'completed'].includes(s.v) ? '' : TaskUI.quickAdd(defs)) + TaskUI.list(list, { drag: s.layout === 'list' && !['completed', 'archived'].includes(s.v), empty: s.v === 'overdue' ? 'Nothing overdue — great job!' : q ? 'No tasks match your search.' : 'No tasks here yet.', emptyIcon: s.v === 'overdue' ? 'check' : 'inbox' }), { pad: false });
+      body = (s.v === 'upcoming' ? H.card('Weekly planning suggestions', Suggest.weekly().map(([ic, t, href]) => `<a class="suggest" href="${href}" style="color:inherit">${I(ic, 'sm')}<span>${U.esc(t)}</span></a>`).join(''), { icon: 'spark', cls: 'mb-16' }) : '') + H.card('', (['archived', 'completed'].includes(s.v) ? '' : TaskUI.quickAdd(defs)) + TaskUI.list(list, { drag: s.layout === 'list' && !['completed', 'archived'].includes(s.v), empty: s.v === 'overdue' ? 'Nothing overdue — great job!' : q ? 'No tasks match your search.' : 'No tasks here yet.', emptyIcon: s.v === 'overdue' ? 'check' : 'inbox' }), { pad: false });
     }
     return `${H.head(T('Tasks'), `${list.length} shown${pr.n ? ` · ${pr.pct}% complete` : ''}`, `${H.seg([['list', I('list', 'sm') + ' List'], ['board', I('kanban', 'sm') + ' Board']], s.layout, 'set', 'data-k="layout"')}${H.btnAdd('tasks', 'New task', s.v === 'today' ? { due: D.today() } : {})}`)}
       <div class="chips mb-12">${TASK_VIEWS.map(([k, l, ic]) => `<button class="chip ${s.v === k ? 'on' : ''}" data-a="set" data-k="v" data-v="${k}">${I(ic, 'sm')}${l}${counts[k] ? `<span class="n">${counts[k]}</span>` : ''}</button>`).join('')}</div>
@@ -2648,7 +2968,7 @@ V.journal = {
     if (r.args[0] === 'entry') return this.entry(r.args[1]);
     const s = ui('journal', { tab: 'entries', q: '', tag: '', mood: '', type: '', month: D.today().slice(0, 7), day: D.today() }); if (r.q.q !== undefined) { s.q = r.q.q; history.replaceState(null, '', '#/journal'); }
     const all = U.sortBy(Journal.visible(), j => j.date + (j.time || ''), -1); const hidden = Store.all('journal').length - all.length; const lock = Settings.get('journalLock');
-    const head = H.head(T('My Journal'), `${all.length} entries · ${Journal.streak()}-day writing streak${hidden ? ` · ${hidden} private hidden` : ''}`, `${lock ? (Journal.isLocked() ? `<button class="btn" data-a="j-unlock">${I('lock', 'sm')}Unlock private</button>` : `<button class="btn" data-a="j-lock">${I('unlock', 'sm')}Lock</button>`) : ''}<button class="btn ghost icon" data-a="j-pin" title="${lock ? 'Change PIN' : 'Set a PIN for private entries'}">${I('settings', 'sm')}</button><button class="btn" data-a="go" data-href="#/journal/new?type=monthly">Monthly reflection</button><a class="btn primary" href="#/journal/new">${I('plus', 'sm')}New entry</a>`);
+    const head = H.head(T('My Journal'), `${all.length} entries · ${Journal.streak()}-day writing streak${hidden ? ` · ${hidden} private hidden` : ''}`, `${lock ? (Journal.isLocked() ? `<button class="btn" data-a="j-unlock">${I('lock', 'sm')}Unlock private</button>` : `<button class="btn" data-a="j-lock">${I('unlock', 'sm')}Lock</button>`) : ''}<button class="btn ghost icon" data-a="j-pin" title="${lock ? 'Change PIN' : 'Set a PIN for private entries'}">${I('settings', 'sm')}</button><button class="btn" data-a="go" data-href="#/journal/new?type=monthly">Monthly reflection</button><button class="btn" data-a="go" data-href="#/journal/new?type=yearly">Yearly reflection</button><a class="btn primary" href="#/journal/new">${I('plus', 'sm')}New entry</a>`);
     const tabs = H.tabs([['entries', 'Entries'], ['timeline', 'Life timeline'], ['calendar', 'Calendar'], ['stats', 'Statistics']], s.tab, 'set', 'data-k="tab"');
     let body = '';
     if (s.tab === 'entries') {
@@ -2785,7 +3105,7 @@ V.goals = {
     const evs = Store.all('events').filter(e => e.goalId === id); const notes = Store.all('notes').filter(n => n.goalId === id);
     const txt = (l, v) => v ? `<div class="mb-12"><div class="flabel mb-8">${l}</div><div style="white-space:pre-wrap">${U.esc(v)}</div></div>` : '';
     return `<div class="page-head"><div class="row top" style="gap:18px">${Chart.ring(p, 76, 8, g.color || 'var(--accent)')}<div><div class="row wrap gap-6"><span class="badge">${U.esc(g.category || '')}</span><span class="badge accent">${labelOf(HORIZONS, g.horizon)}</span>${priorityBadge(g.priority)}</div><h1 class="mt-8">${U.esc(g.title)}</h1><p>${g.targetDate ? `Target ${D.fmt(g.targetDate, 'long')} · ${D.rel(g.targetDate)}` : 'No target date'}${g.progressMode === 'manual' ? ' · manual progress' : ' · progress calculated from milestones, projects & tasks'}</p></div></div>
-      <div class="row wrap">${H.select('st', GOAL_STATUS, g.status, `data-ch="goal-status" data-id="${id}"`)}<button class="btn" data-a="goal-project" data-id="${id}">${I('projects', 'sm')}Create project</button><button class="btn" data-a="edit" data-c="goals" data-id="${id}">${I('edit', 'sm')}Edit</button><button class="btn ghost icon" data-a="archive" data-c="goals" data-id="${id}" title="Archive">${I('archive', 'sm')}</button></div></div>
+      <div class="row wrap">${H.select('st', GOAL_STATUS, g.status, `data-ch="goal-status" data-id="${id}"`)}<button class="btn" data-a="goal-project" data-id="${id}">${I('projects', 'sm')}Create project</button>${PinUI.btns('goals', g)}<button class="btn" data-a="edit" data-c="goals" data-id="${id}">${I('edit', 'sm')}Edit</button><button class="btn ghost icon" data-a="archive" data-c="goals" data-id="${id}" title="Archive">${I('archive', 'sm')}</button></div></div>
       ${deps.filter(d => d.status !== 'achieved').length ? `<div class="banner warn">${I('alert', 'sm')}Depends on: ${deps.map(d => `<a href="#/goals/${d.id}">${U.esc(d.title)}</a> (${Goals.progress(d)}%)`).join(', ')}</div>` : ''}
       <div class="grid g-side"><div class="col" style="gap:16px">
         ${H.card(`Milestones <span class="faint small">${(g.milestones || []).filter(m => m.done).length}/${(g.milestones || []).length}</span>`, ListUI.html('goals', g, 'milestones', { ph: 'Add a milestone… (Enter)', withDate: true, empty: 'Break this goal into milestones.', extra: (m, i) => `<button class="btn ghost xs" data-a="ms-task" data-id="${id}" data-i="${i}" title="Create a task for this milestone">${I('tasks', 'sm')}Task</button>` }), { icon: 'layers' })}
@@ -2825,11 +3145,13 @@ V.habits = {
       <div class="grid g4 mb-16">${H.stat('Today', `${U.pct(today.d, today.n)}%`, `${today.d} of ${today.n} habits`, 'check')}${H.stat('30-day consistency', `${hs.length ? Math.round(U.avg(hs, h => Habits.rate(h, 30))) : 0}%`, 'average across habits', 'chart')}${H.stat('Best current streak', `${hs.length ? Math.max(...hs.map(h => Habits.streak(h))) : 0} days`, '', 'zap')}${H.stat('All-time best streak', `${hs.length ? Math.max(...hs.map(h => Habits.best(h))) : 0} days`, '', 'star')}</div>
       ${H.card(`Week of ${D.fmt(s.week, 'short')}`, hs.length ? `<div style="overflow-x:auto"><div class="habit-grid"><div></div>${days.map(d => `<div class="hh" style="${d === td ? 'color:var(--accent-text)' : ''}">${D.fmt(d, 'wd')}<br>${+d.slice(8)}</div>`).join('')}<div class="hh hx">Streak</div><div class="hh hx">30 days</div>
         ${hs.map(h => `<div class="row" style="min-width:0"><i class="cdot" style="background:${h.color || 'var(--accent)'}"></i><span class="ellipsis" style="cursor:pointer;font-weight:500" data-a="edit" data-c="habits" data-id="${h.id}" title="${U.attr(h.description || '')}">${U.esc(h.name)}</span>${h.target ? `<span class="tiny faint hide-sm">${U.esc(h.target)}</span>` : ''}</div>${days.map(d => { const sch = Habits.scheduled(h, d), dn = Habits.done(h, d), fut = d > td; return `<button class="hcell ${dn ? 'on' : ''} ${!sch || fut ? 'na' : ''}" style="--c:${h.color || 'var(--accent)'}" ${sch && !fut ? `data-a="habit-toggle" data-id="${h.id}" data-d="${d}"` : 'disabled'} aria-label="${U.attr(h.name + ' ' + d)}">${dn ? I('check', 'sm') : ''}</button>`; }).join('')}<div class="center small hx">🔥 ${Habits.streak(h)}</div><div class="hx">${Chart.progress(Habits.rate(h, 30), 'success')}<div class="tiny faint center">${Habits.rate(h, 30)}%</div></div>`).join('')}</div></div>` : H.empty('Create your first habit — e.g. “Read 20 pages”, “Workout”, “No phone after 22:00”.', 'repeat', H.btnAdd('habits', 'Create habit', null, 'sm')), { icon: 'repeat', actions: `<button class="btn ghost icon xs" data-a="hab-week" data-dir="-7">${I('left', 'sm')}</button><button class="btn ghost xs" data-a="hab-week" data-dir="0">This week</button><button class="btn ghost icon xs" data-a="hab-week" data-dir="7">${I('right', 'sm')}</button>` })}
+      ${hs.length ? (() => { s.hmonth = s.hmonth || td.slice(0, 7); const md = D.range(s.hmonth + '-01', D.monthEnd(s.hmonth + '-01')); const dot = c => `<i class="cdot" style="background:${c};width:10px;height:10px"></i>`; return H.card(`Monthly overview · ${D.fmt(s.hmonth + '-01', 'month')}`, `<div class="table-wrap"><table class="tbl" style="font-size:11px"><thead><tr><th>Habit</th>${md.map(d => `<th style="padding:6px 1px;text-align:center;${d === td ? 'color:var(--accent-text)' : ''}">${+d.slice(8)}</th>`).join('')}<th class="r">Done</th></tr></thead><tbody>${hs.map(h => { let sc = 0, dn = 0; const cells = md.map(d => { const ok = Habits.scheduled(h, d) && d <= td; if (ok) { sc++; if (Habits.done(h, d)) dn++; } return `<td style="padding:4px 1px;text-align:center">${!ok ? '<span class="faint">·</span>' : Habits.done(h, d) ? dot(h.color || 'var(--accent)') : dot('var(--surface-3)')}</td>`; }).join(''); return `<tr><td style="white-space:nowrap">${U.esc(h.name)}</td>${cells}<td class="r num" style="white-space:nowrap">${dn}/${sc} · ${U.pct(dn, sc)}%</td></tr>`; }).join('')}</tbody></table></div>`, { icon: 'calendar', cls: 'mt-16', actions: `<button class="btn ghost icon xs" data-a="hab-month" data-dir="-1">${I('left', 'sm')}</button><button class="btn ghost icon xs" data-a="hab-month" data-dir="1">${I('right', 'sm')}</button>` }); })() : ''}
       ${hs.length ? `<div class="grid g2 mt-16">${H.card('Daily completion · last 30 days', Chart.mount('line', { labels: last30.map(d => D.fmt(d, 'short')), series: [{ name: 'Completion', values: daily }], fmt: v => Math.round(v) + '%', tip: v => v + '%', height: 180 }))}${H.card('Habit history', `${H.select('sel', hs.map(h => ({ v: h.id, l: h.name })), sel.id, 'data-ch="set" data-k="sel"')}<div class="mt-12" style="overflow-x:auto">${heat(sel)}</div><div class="row wrap small mt-12 gap-16"><span>Current streak <b>${Habits.streak(sel)}</b></span><span>Best <b>${Habits.best(sel)}</b></span><span>30-day <b>${Habits.rate(sel, 30)}%</b></span><span>Total check-ins <b>${Object.keys(sel.log || {}).length}</b></span></div><div class="row mt-12"><button class="btn sm" data-a="archive" data-c="habits" data-id="${sel.id}">${I('archive', 'sm')}Archive habit</button></div>`)}</div>
         <div class="grid g3 mt-16">${HABIT_CATS.filter(c => hs.some(h => h.category === c)).map(c => { const xs = hs.filter(h => h.category === c); return H.card(c, Chart.hbars(xs.map(h => ({ label: h.name, value: Habits.rate(h, 30), max: 100, display: Habits.rate(h, 30) + '%', color: h.color })))); }).join('')}</div>` : ''}
       ${Store.all('habits').some(h => h.archived) ? `<details class="mt-16"><summary class="small muted" style="cursor:pointer">Archived habits</summary>${Store.all('habits').filter(h => h.archived).map(h => `<div class="mini-li"><span class="t">${U.esc(h.name)}</span><button class="btn xs" data-a="archive" data-c="habits" data-id="${h.id}">Restore</button><button class="btn ghost icon xs" data-a="del" data-c="habits" data-id="${h.id}">${I('trash', 'sm')}</button></div>`).join('')}</details>` : ''}`;
   }
 };
+A['hab-month'] = el => { const s = UI.habits; s.hmonth = D.addMonths((s.hmonth || D.today().slice(0, 7)) + '-01', +el.dataset.dir).slice(0, 7); App.render(); };
 A['hab-week'] = el => { const s = UI.habits; const n = +el.dataset.dir; s.week = n ? D.add(s.week, n) : D.weekStart(); App.render(); };
 
 const Trackers = {
@@ -2920,7 +3242,7 @@ V.travel = {
     const t = Store.get('trips', id); if (!t) return H.empty('Trip not found.', 'plane'); Recent.add('trips', id);
     const spent = U.sum(t.expenses || [], e => e.amount || 0); const txt = (l, v) => v ? `<div class="mb-12"><div class="flabel mb-8">${l}</div><div style="white-space:pre-wrap">${U.esc(v)}</div></div>` : '';
     const itin = U.sortBy((t.itinerary || []).map((x, i) => ({ ...x, i })), x => x.date || '9999');
-    return `<div class="page-head"><div><div class="row gap-6"><span class="badge accent">${U.esc(t.status || '')}</span>${t.start && t.start >= D.today() ? `<span class="badge">in ${D.diff(D.today(), t.start)} days</span>` : ''}</div><h1 class="mt-8">${U.esc(t.destination)}</h1><p>${t.start ? D.fmt(t.start, 'long') + (t.end ? ' – ' + D.fmt(t.end, 'long') : '') : 'No dates yet'}</p></div><div class="row"><button class="btn" data-a="trip-event" data-id="${id}">${I('calendar', 'sm')}Add to calendar</button><button class="btn" data-a="edit" data-c="trips" data-id="${id}">${I('edit', 'sm')}Edit</button><button class="btn danger ghost icon" data-a="trip-del" data-id="${id}">${I('trash', 'sm')}</button></div></div>
+    return `<div class="page-head"><div><div class="row gap-6"><span class="badge accent">${U.esc(t.status || '')}</span>${t.start && t.start >= D.today() ? `<span class="badge">in ${D.diff(D.today(), t.start)} days</span>` : ''}</div><h1 class="mt-8">${U.esc(t.destination)}</h1><p>${t.start ? D.fmt(t.start, 'long') + (t.end ? ' – ' + D.fmt(t.end, 'long') : '') : 'No dates yet'}</p></div><div class="row"><button class="btn" data-a="trip-event" data-id="${id}">${I('calendar', 'sm')}Add to calendar</button>${PinUI.btns('trips', t)}<button class="btn" data-a="edit" data-c="trips" data-id="${id}">${I('edit', 'sm')}Edit</button><button class="btn danger ghost icon" data-a="trip-del" data-id="${id}">${I('trash', 'sm')}</button></div></div>
       <div class="grid g4 mb-16">${H.stat('Budget', t.budget ? Money.fmt(t.budget, t.currency) : '—', '', 'wallet')}${H.stat('Spent', Money.fmt(spent, t.currency), t.budget ? (spent > t.budget ? `<span class="neg">${Money.fmt(spent - t.budget, t.currency)} over</span>` : `${Money.fmt(t.budget - spent, t.currency)} left`) : '', 'receipt')}${H.stat('Packing', `${(t.packing || []).filter(p => p.done).length}/${(t.packing || []).length}`, 'items packed', 'check')}${H.stat('Days', t.start && t.end ? D.diff(t.start, t.end) + 1 : '—', '', 'calendar')}</div>
       <div class="grid g2"><div class="col" style="gap:16px">${H.card('Itinerary', `${itin.length ? itin.map(x => `<div class="mini-li"><input type="checkbox" class="cb" data-a="list-toggle" data-c="trips" data-id="${id}" data-k="itinerary" data-i="${x.i}" ${x.done ? 'checked' : ''}><span class="faint small" style="width:76px">${x.date ? D.fmt(x.date, 'med') : '—'}</span><span class="t">${U.esc(x.text)}</span><button class="btn ghost icon xs" data-a="list-del" data-c="trips" data-id="${id}" data-k="itinerary" data-i="${x.i}">${I('x', 'sm')}</button></div>`).join('') : ''}<div class="row mt-8"><input class="input sm grow" placeholder="Add itinerary item… (Enter)" data-enter="list-add" data-c="trips" data-id="${id}" data-k="itinerary" id="it_${id}"><input type="date" class="input sm" style="width:140px" data-list-date value="${t.start || ''}"></div>`, { icon: 'timeline' })}
         ${H.card('Activities', ListUI.html('trips', t, 'activities', { ph: 'Add an activity…' }), { icon: 'star' })}
@@ -2974,6 +3296,11 @@ V.business = {
       body = `<div class="grid g4 mb-16">${H.stat('Revenue · this month', Money.fmt(m.revenue, cur), b.salesTarget ? `${U.pct(m.revenue, b.salesTarget)}% of ${Money.fmt(b.salesTarget, cur, 0)} target` : '', 'up_trend', 'pos')}${H.stat('Expenses · this month', Money.fmt(m.expenses, cur), '', 'down_trend', 'neg')}${H.stat('Profit · this month', Money.fmt(m.profit, cur), `All time: ${Money.fmt(all.profit, cur)}`, 'chart', m.profit < 0 ? 'neg' : 'pos')}${H.stat('Cash position', Money.fmt(all.cash, cur), `Invested ${Money.fmt(all.invested, cur)}`, 'wallet')}</div>
         <div class="grid g4 mb-16">${H.stat('Unpaid invoices (receivable)', Money.fmt(all.receivable, cur), '', 'receipt', all.receivable ? 'warn' : '')}${H.stat('Unpaid supplier bills', Money.fmt(all.payable, cur), '', 'receipt', all.payable ? 'neg' : '')}${H.stat('Customers', all.customers, b.customerTarget ? `target ${b.customerTarget}` : 'unique paying customers', 'users')}${H.stat('Startup costs', Money.fmt(all.startup, cur), '', 'rocket')}</div>
         <div class="grid g-side mb-16">${H.card(`Revenue, expenses & profit · 12 months (${cur})`, tx.length ? Chart.mount('bar', { labels: months.map(x => D.fmt(x.mk + '-01', 'mon')), series: [{ name: 'Revenue', values: months.map(x => x.revenue), color: '#10b981' }, { name: 'Expenses', values: months.map(x => x.expenses), color: '#ef4444' }, { name: 'Profit', values: months.map(x => x.profit), color: 'var(--accent)' }], height: 220 }) : H.empty('Record revenue and expenses in the Finances tab.', 'chart', `<button class="btn sm" data-a="biztx-add" data-id="${id}" data-k="revenue">Add first transaction</button>`), { icon: 'chart' })}${H.card('Expenses by category', Chart.donut({ segments: Object.entries(cats).map(([l, v]) => ({ label: l, value: U.round2(v) })).sort((a, b) => b.value - a.value), fmt: v => Money.fmt(v, cur, 0), center: Money.short(U.sum(Object.values(cats))), centerSub: cur, size: 130 }), { icon: 'receipt' })}</div>
+        ${(() => { const ms = Biz.monthly(id, 7); const cur6 = ms.slice(1); const chg = (a, c) => c ? Math.round((a - c) / Math.abs(c) * 100) : null; const fc = v => v == null ? '<span class="faint">—</span>' : `<span class="${v >= 0 ? 'pos' : 'neg'}">${v >= 0 ? '▲' : '▼'} ${Math.abs(v)}%</span>`;
+          const first = {}; U.sortBy(tx.filter(x => x.kind === 'revenue' && x.counterparty), x => x.date).forEach(x => { const k = x.counterparty.trim().toLowerCase(); if (!first[k]) first[k] = x.date; }); const newC = m => Object.values(first).filter(d => d && d.startsWith(m)).length;
+          const byC = {}; tx.filter(x => x.kind === 'revenue' && x.counterparty && x.status !== 'unpaid').forEach(x => { const k = x.counterparty.trim(); byC[k] = (byC[k] || 0) + Biz.conv(x, b); }); const top = Object.entries(byC).sort((a, c) => c[1] - a[1]).slice(0, 5);
+          const avg3 = U.avg(ms.slice(-3), x => x.revenue), prev3 = U.avg(ms.slice(-6, -3), x => x.revenue);
+          return `<div class="grid g-side mb-16">${H.card('Monthly comparison & growth', `<div class="row wrap gap-16 small mb-12"><span>Revenue vs last month ${fc(chg(ms[6].revenue, ms[5].revenue))}</span><span>Profit vs last month ${fc(chg(ms[6].profit, ms[5].profit))}</span><span>3-month growth ${fc(chg(avg3, prev3))}</span></div><div class="table-wrap"><table class="tbl"><thead><tr><th>Month</th><th class="r">Revenue</th><th class="r">vs prev.</th><th class="r">Expenses</th><th class="r">Profit</th><th class="r">vs prev.</th><th class="r">New customers</th></tr></thead><tbody>${cur6.map((x, i) => `<tr><td>${D.fmt(x.mk + '-01', 'month')}</td><td class="r num">${Money.fmt(x.revenue, cur, 0)}</td><td class="r">${fc(chg(x.revenue, ms[i].revenue))}</td><td class="r num">${Money.fmt(x.expenses, cur, 0)}</td><td class="r num ${x.profit < 0 ? 'neg' : ''}">${Money.fmt(x.profit, cur, 0)}</td><td class="r">${fc(chg(x.profit, ms[i].profit))}</td><td class="r num">${newC(x.mk)}</td></tr>`).reverse().join('')}</tbody></table></div>`, { icon: 'up_trend' })}${H.card('Customer statistics', `<div class="grid g2 mb-12" style="gap:8px"><div><div class="tiny faint">Total customers</div><b class="num">${all.customers}</b>${b.customerTarget ? ` <span class="tiny faint">/ ${b.customerTarget} target</span>` : ''}</div><div><div class="tiny faint">New this month</div><b class="num">${newC(mk)}</b></div><div><div class="tiny faint">Avg. revenue per customer</div><b class="num">${all.customers ? Money.fmt(all.revenue / all.customers, cur, 0) : '—'}</b></div><div><div class="tiny faint">Sales this month</div><b class="num">${tx.filter(x => x.kind === 'revenue' && x.date && x.date.startsWith(mk)).length}</b></div></div>${b.customerTarget ? Chart.progress(U.pct(all.customers, b.customerTarget), 'success') + '<div class="mb-12"></div>' : ''}${top.length ? `<div class="tiny faint mb-8">TOP CUSTOMERS BY REVENUE</div>` + Chart.hbars(top.map(([l, v]) => ({ label: l, value: v, display: Money.fmt(v, cur, 0) }))) : '<div class="small faint">Enter the customer name on revenue entries to see customer statistics.</div>'}`, { icon: 'users' })}</div>`; })()}
         <div class="grid g3">${H.card('Profile', kv.length ? `<dl class="kv">${kv.map(([k, v]) => `<dt>${k}</dt><dd>${k === 'Website' ? `<a href="${U.attr(v)}" target="_blank" rel="noopener noreferrer">${U.esc(v)}</a>` : U.esc(v)}</dd>`).join('')}</dl>` : '<div class="small faint">Complete the profile via “Edit profile”.</div>', { icon: 'building' })}${H.card(`Projects · ${projs.length}`, projs.length ? projs.slice(0, 6).map(p => `<a href="#/projects/${p.id}" style="display:block;color:inherit;padding:5px 0"><div class="row between small"><span class="ellipsis">${U.esc(p.title)}</span><span class="faint">${Projects.progress(p)}%</span></div>${Chart.progress(Projects.progress(p))}</a>`).join('') : '<div class="small faint">No projects yet.</div>', { icon: 'projects', actions: `<button class="btn ghost xs" data-a="add" data-c="projects" data-def='${U.attr(JSON.stringify({ businessId: id, area: 'Business' }))}'>${I('plus', 'sm')}</button>` })}${H.card('Open invoices & bills', unpaid.length ? unpaid.slice(0, 6).map(x => `<div class="mini-li"><span class="badge ${x.kind === 'revenue' ? 'warning' : 'danger'}">${x.kind === 'revenue' ? 'In' : 'Out'}</span><span class="t">${U.esc(x.counterparty || x.description || x.category)}</span><span class="small ${x.dueDate && x.dueDate < D.today() ? 'neg' : 'faint'}">${x.dueDate ? D.smart(x.dueDate) : ''}</span><b class="num small">${Money.fmt(x.amount, x.currency || cur, 0)}</b><button class="btn xs" data-a="biztx-paid" data-id="${x.id}">${I('check', 'sm')}</button></div>`).join('') : '<div class="small faint">Everything is paid.</div>', { icon: 'receipt' })}</div>`;
     } else if (s.tab === 'planning') {
       const plan = b.plan || {};
@@ -3021,7 +3348,7 @@ Object.assign(A, {
   'biz-csv': el => Exporter.bizCsv(el.dataset.id),
   'biz-report-csv': el => Exporter.bizReport(el.dataset.id, UI.bizws.ryear),
   'biz-note': el => Notes.create({ title: 'Meeting — ' + D.fmt(D.today()), category: 'Meeting notes', businessId: el.dataset.id, content: '<h3>Attendees</h3><ul><li></li></ul><h3>Discussion</h3><p></p><h3>Decisions</h3><ul><li></li></ul><h3>Next steps</h3><ul class="checklist"><li></li></ul>' }),
-  'biz-more': el => { const b = Store.get('businesses', el.dataset.id); Menu.open(el, [{ l: 'Edit profile', icon: 'edit', a: () => Form.open('businesses', b) }, { l: b.archived ? 'Unarchive' : 'Archive business', icon: 'archive', a: () => Records.toggle('businesses', b.id, 'archived') }, { l: 'Export transactions (CSV)', icon: 'download', a: () => Exporter.bizCsv(b.id) }, '-', { l: 'Delete business…', icon: 'trash', danger: true, a: async () => { const n = Biz.tx(b.id).length; if (!(await Confirm(`Delete “${b.name}”${n ? ` and its ${n} financial records` : ''}? Linked projects, tasks and notes are kept.`, { ok: 'Delete', danger: true }))) return; Store.data.bizTx = Store.data.bizTx.filter(x => x.businessId !== b.id); Store.remove('businesses', b.id); Toast.show('Business deleted'); Router.go('#/business'); } }]); }
+  'biz-more': el => { const b = Store.get('businesses', el.dataset.id); Menu.open(el, [{ l: 'Edit profile', icon: 'edit', a: () => Form.open('businesses', b) }, { l: b.pinned ? 'Unpin from dashboard' : 'Pin to dashboard', icon: 'pin', a: () => Records.toggle('businesses', b.id, 'pinned') }, { l: b.fav ? 'Remove from favorites' : 'Add to favorites', icon: 'star', a: () => Records.toggle('businesses', b.id, 'fav') }, { l: b.archived ? 'Unarchive' : 'Archive business', icon: 'archive', a: () => Records.toggle('businesses', b.id, 'archived') }, { l: 'Export transactions (CSV)', icon: 'download', a: () => Exporter.bizCsv(b.id) }, '-', { l: 'Delete business…', icon: 'trash', danger: true, a: async () => { const n = Biz.tx(b.id).length; if (!(await Confirm(`Delete “${b.name}”${n ? ` and its ${n} financial records` : ''}? Linked projects, tasks and notes are kept.`, { ok: 'Delete', danger: true }))) return; Store.data.bizTx = Store.data.bizTx.filter(x => x.businessId !== b.id); Store.remove('businesses', b.id); Toast.show('Business deleted'); Router.go('#/business'); } }]); }
 });
 Bus.on('record', (c, item, op) => { if (c === 'bizTx' && op === 'add' && !item.businessId) { const r = Router.cur; if (r && r.name === 'business' && r.args[0]) item.businessId = r.args[0]; } });
 
@@ -3035,19 +3362,19 @@ V.ideas = {
     const s = ui('ideas', { q: '', st: '', ind: '', sort: 'score', fav: false, arch: false, sel: [] }); if (r.q.q !== undefined) { s.q = r.q.q; history.replaceState(null, '', '#/ideas'); }
     const allIdeas = Store.all('ideas'); let list = allIdeas.filter(i => !!i.archived === !!s.arch);
     if (s.q) { const q = s.q.toLowerCase(); list = list.filter(i => [i.title, i.description, i.industry, i.problem, i.thoughts, ...(i.tags || [])].join(' ').toLowerCase().includes(q)); }
-    if (s.st) list = list.filter(i => i.status === s.st); if (s.ind) list = list.filter(i => i.industry === s.ind); if (s.fav) list = list.filter(i => i.fav);
+    if (s.st) list = list.filter(i => i.status === s.st); if (s.icat) list = list.filter(i => i.category === s.icat); if (s.ind) list = list.filter(i => i.industry === s.ind); if (s.fav) list = list.filter(i => i.fav);
     list = s.sort === 'score' ? U.sortBy(list, i => Ideas.score(i) ?? -1, -1) : s.sort === 'new' ? U.sortBy(list, i => i.createdAt, -1) : s.sort === 'prio' ? U.sortBy(list, i => PRIO_RANK[i.priority] ?? 2) : s.sort === 'invest' ? U.sortBy(list, i => i.investment ?? Infinity) : U.sortBy(list, i => Ideas.margin(i) ?? -Infinity, -1);
     const inds = [...new Set(allIdeas.map(i => i.industry).filter(Boolean))]; s.sel = s.sel.filter(id => Store.get('ideas', id));
     return `${H.head(T('Business Ideas'), `${allIdeas.filter(i => !i.archived).length} ideas in your vault · evaluate, rank and convert the best ones`, `${s.sel.length >= 2 ? `<button class="btn" data-a="idea-compare">${I('scale', 'sm')}Compare ${s.sel.length}</button>` : ''}${H.btnAdd('ideas', 'New idea')}`)}
-      <div class="toolbar">${H.search('ideaSearch', s.q, 'Search ideas…')}${H.select('st', [{ v: '', l: 'All statuses' }, ...IDEA_STATUS], s.st, 'data-ch="set" data-k="st"')}${inds.length ? H.select('ind', [{ v: '', l: 'All industries' }, ...inds], s.ind, 'data-ch="set" data-k="ind"') : ''}${H.select('sort', [{ v: 'score', l: 'Rank: Evaluation score' }, { v: 'margin', l: 'Rank: Monthly margin' }, { v: 'invest', l: 'Rank: Lowest investment' }, { v: 'prio', l: 'Rank: Priority' }, { v: 'new', l: 'Newest first' }], s.sort, 'data-ch="set" data-k="sort"')}<label class="row small muted" style="cursor:pointer"><input type="checkbox" class="cb" data-ch="set" data-k="fav" ${s.fav ? 'checked' : ''}>Favorites</label><label class="row small muted" style="cursor:pointer"><input type="checkbox" class="cb" data-ch="set" data-k="arch" ${s.arch ? 'checked' : ''}>Archived</label></div>
-      ${list.length ? `<div class="table-wrap"><table class="tbl"><thead><tr><th style="width:30px" title="Select to compare"></th><th>#</th><th>Idea</th><th>Score</th><th class="hide-sm">Status</th><th class="r hide-sm">Investment</th><th class="r hide-sm">Margin / month</th><th></th></tr></thead><tbody>${list.map((i, n) => { const m = Ideas.margin(i); return `<tr><td><input type="checkbox" class="cb" data-a="idea-sel" data-id="${i.id}" ${s.sel.includes(i.id) ? 'checked' : ''} aria-label="Select for comparison"></td><td class="faint num">${n + 1}</td><td><a href="#/ideas/${i.id}" style="color:inherit;font-weight:500">${U.esc(i.title)}</a><div class="small faint">${U.esc([i.industry, ...(i.tags || [])].filter(Boolean).join(' · '))}</div></td><td>${scoreBadge(Ideas.score(i))}</td><td class="hide-sm"><span class="badge">${labelOf(IDEA_STATUS, i.status)}</span></td><td class="r num hide-sm">${i.investment != null ? Money.fmt(i.investment, i.currency, 0) : '—'}</td><td class="r num hide-sm ${m < 0 ? 'neg' : ''}">${m != null ? Money.fmt(m, i.currency, 0) : '—'}</td><td class="r" style="white-space:nowrap"><button class="btn ghost icon xs" data-a="fav" data-c="ideas" data-id="${i.id}" style="${i.fav ? 'color:var(--warning)' : ''}" title="Favorite">${I('star', 'sm')}</button><button class="btn ghost icon xs" data-a="edit" data-c="ideas" data-id="${i.id}">${I('edit', 'sm')}</button></td></tr>`; }).join('')}</tbody></table></div><p class="tiny faint mt-8">Score = average of your 1–5 ratings across up to 8 criteria, scaled to 0–100. Tick two or more ideas to compare them side by side.</p>` : H.empty(allIdeas.length ? 'No ideas match.' : 'Capture every business idea — even half-formed ones. Evaluate them later.', 'bulb', H.btnAdd('ideas', 'Save an idea', null, 'sm'))}`;
+      <div class="toolbar">${H.search('ideaSearch', s.q, 'Search ideas…')}${H.select('st', [{ v: '', l: 'All statuses' }, ...IDEA_STATUS], s.st, 'data-ch="set" data-k="st"')}${(() => { const cs = [...new Set(allIdeas.map(i => i.category).filter(Boolean))]; return cs.length ? H.select('icat', [{ v: '', l: 'All categories' }, ...cs], s.icat || '', 'data-ch="set" data-k="icat"') : ''; })()}${inds.length ? H.select('ind', [{ v: '', l: 'All industries' }, ...inds], s.ind, 'data-ch="set" data-k="ind"') : ''}${H.select('sort', [{ v: 'score', l: 'Rank: Evaluation score' }, { v: 'margin', l: 'Rank: Monthly margin' }, { v: 'invest', l: 'Rank: Lowest investment' }, { v: 'prio', l: 'Rank: Priority' }, { v: 'new', l: 'Newest first' }], s.sort, 'data-ch="set" data-k="sort"')}<label class="row small muted" style="cursor:pointer"><input type="checkbox" class="cb" data-ch="set" data-k="fav" ${s.fav ? 'checked' : ''}>Favorites</label><label class="row small muted" style="cursor:pointer"><input type="checkbox" class="cb" data-ch="set" data-k="arch" ${s.arch ? 'checked' : ''}>Archived</label></div>
+      ${list.length ? `<div class="table-wrap"><table class="tbl"><thead><tr><th style="width:30px" title="Select to compare"></th><th>#</th><th>Idea</th><th>Score</th><th class="hide-sm">Status</th><th class="r hide-sm">Investment</th><th class="r hide-sm">Margin / month</th><th></th></tr></thead><tbody>${list.map((i, n) => { const m = Ideas.margin(i); return `<tr><td><input type="checkbox" class="cb" data-a="idea-sel" data-id="${i.id}" ${s.sel.includes(i.id) ? 'checked' : ''} aria-label="Select for comparison"></td><td class="faint num">${n + 1}</td><td><a href="#/ideas/${i.id}" style="color:inherit;font-weight:500">${U.esc(i.title)}</a><div class="small faint">${U.esc([i.category, i.industry, ...(i.tags || [])].filter(Boolean).join(' · '))}</div></td><td>${scoreBadge(Ideas.score(i))}</td><td class="hide-sm"><span class="badge">${labelOf(IDEA_STATUS, i.status)}</span></td><td class="r num hide-sm">${i.investment != null ? Money.fmt(i.investment, i.currency, 0) : '—'}</td><td class="r num hide-sm ${m < 0 ? 'neg' : ''}">${m != null ? Money.fmt(m, i.currency, 0) : '—'}</td><td class="r" style="white-space:nowrap"><button class="btn ghost icon xs" data-a="fav" data-c="ideas" data-id="${i.id}" style="${i.fav ? 'color:var(--warning)' : ''}" title="Favorite">${I('star', 'sm')}</button><button class="btn ghost icon xs" data-a="edit" data-c="ideas" data-id="${i.id}">${I('edit', 'sm')}</button></td></tr>`; }).join('')}</tbody></table></div><p class="tiny faint mt-8">Score = average of your 1–5 ratings across up to 8 criteria, scaled to 0–100. Tick two or more ideas to compare them side by side.</p>` : H.empty(allIdeas.length ? 'No ideas match.' : 'Capture every business idea — even half-formed ones. Evaluate them later.', 'bulb', H.btnAdd('ideas', 'Save an idea', null, 'sm'))}`;
   },
   detail(id) {
     const i = Store.get('ideas', id); if (!i) return H.empty('Idea not found.', 'bulb'); Recent.add('ideas', id);
     const sc = Ideas.score(i); const m = Ideas.margin(i); const pb = Ideas.payback(i); const labels = Object.fromEntries(SCHEMA.ideas.fields.filter(f => f.t === 'score').map(f => [f.k, f.l]));
     const txt = (l, v) => v ? `<div class="mb-12"><div class="flabel mb-8">${l}</div><div style="white-space:pre-wrap">${U.esc(v)}</div></div>` : '';
     const proj = Store.all('projects').filter(p => p.ideaId === id); const biz = Store.all('businesses').filter(b => b.ideaId === id);
-    return `<div class="page-head"><div class="row top" style="gap:18px">${Chart.ring(sc || 0, 76, 8, sc >= 70 ? 'var(--success)' : sc >= 45 ? 'var(--warning)' : 'var(--danger)')}<div><div class="row wrap gap-6"><span class="badge accent">${labelOf(IDEA_STATUS, i.status)}</span>${priorityBadge(i.priority)}${i.industry ? `<span class="badge">${U.esc(i.industry)}</span>` : ''}${(i.tags || []).map(t => `<span class="tag">${U.esc(t)}</span>`).join('')}</div><h1 class="mt-8">${U.esc(i.title)} ${i.fav ? '<span class="warn">★</span>' : ''}</h1><p>${sc == null ? 'Not evaluated yet — rate it via Edit.' : `Evaluation score ${sc}/100 from ${Ideas.rated(i)} criteria`} · saved ${D.ago(i.createdAt)}</p></div></div>
+    return `<div class="page-head"><div class="row top" style="gap:18px">${Chart.ring(sc || 0, 76, 8, sc >= 70 ? 'var(--success)' : sc >= 45 ? 'var(--warning)' : 'var(--danger)')}<div><div class="row wrap gap-6"><span class="badge accent">${labelOf(IDEA_STATUS, i.status)}</span>${priorityBadge(i.priority)}${i.industry ? `<span class="badge">${U.esc(i.industry)}</span>` : ''}${i.category ? `<span class="badge">${U.esc(i.category)}</span>` : ''}${i.difficulty ? `<span class="badge ${i.difficulty >= 4 ? 'warning' : ''}">Difficulty: ${labelOf(() => opt([['1', 'Very easy'], ['2', 'Easy'], ['3', 'Medium'], ['4', 'Hard'], ['5', 'Very hard']]), String(i.difficulty))}</span>` : ''}${(i.tags || []).map(t => `<span class="tag">${U.esc(t)}</span>`).join('')}</div><h1 class="mt-8">${U.esc(i.title)} ${i.fav ? '<span class="warn">★</span>' : ''}</h1><p>${sc == null ? 'Not evaluated yet — rate it via Edit.' : `Evaluation score ${sc}/100 from ${Ideas.rated(i)} criteria`} · saved ${D.ago(i.createdAt)}</p></div></div>
       <div class="row wrap"><button class="btn" data-a="idea-project" data-id="${id}">${I('projects', 'sm')}Convert to project</button><button class="btn primary" data-a="idea-biz" data-id="${id}">${I('briefcase', 'sm')}Convert to business</button><button class="btn" data-a="edit" data-c="ideas" data-id="${id}">${I('edit', 'sm')}Edit</button><button class="btn ghost icon" data-a="fav" data-c="ideas" data-id="${id}" title="Favorite">${I('star', 'sm')}</button><button class="btn ghost icon" data-a="archive" data-c="ideas" data-id="${id}" title="Archive">${I('archive', 'sm')}</button><button class="btn ghost icon danger" data-a="idea-del" data-id="${id}">${I('trash', 'sm')}</button></div></div>
       ${proj.length || biz.length ? `<div class="banner info">${I('link', 'sm')}Converted into: ${[...proj.map(p => `<a href="#/projects/${p.id}">${U.esc(p.title)} (project)</a>`), ...biz.map(b => `<a href="#/business/${b.id}">${U.esc(b.name)} (business)</a>`)].join(', ')}</div>` : ''}
       <div class="grid g4 mb-16">${H.stat('Startup investment', i.investment != null ? Money.fmt(i.investment, i.currency) : '—', '', 'rocket')}${H.stat('Potential revenue / mo', i.revenue != null ? Money.fmt(i.revenue, i.currency) : '—', '', 'up_trend')}${H.stat('Expected expenses / mo', i.expenses != null ? Money.fmt(i.expenses, i.currency) : '—', '', 'down_trend')}${H.stat('Margin / month', m != null ? Money.fmt(m, i.currency) : '—', pb ? `Payback ≈ ${pb} months` : '', 'chart', m < 0 ? 'neg' : 'pos')}</div>
@@ -3064,7 +3391,7 @@ Object.assign(A, {
     const ids = UI.ideas.sel.map(id => Store.get('ideas', id)).filter(Boolean); const labels = SCHEMA.ideas.fields.filter(f => f.t === 'score');
     const best = (fn, hi = true) => { const vals = ids.map(fn).filter(v => v != null && isFinite(v)); return vals.length ? (hi ? Math.max(...vals) : Math.min(...vals)) : null; };
     const row = (l, fn, fmt = v => v ?? '—', hi = true) => { const b = best(fn, hi); return `<tr><td class="faint">${l}</td>${ids.map(i => { const v = fn(i); return `<td class="${v != null && v === b && ids.length > 1 ? 'pos' : ''}" style="${v === b ? 'font-weight:600' : ''}">${U.esc(fmt(v, i))}</td>`; }).join('')}</tr>`; };
-    Modal.open({ title: 'Compare business ideas', size: 'xl', body: `<div class="table-wrap"><table class="tbl"><thead><tr><th></th>${ids.map(i => `<th style="min-width:160px">${U.esc(i.title)}</th>`).join('')}</tr></thead><tbody>${row('Overall score', Ideas.score, v => v == null ? '—' : v + '/100')}${labels.map(f => row(f.l, i => i[f.k] ? Number(i[f.k]) : null, v => v ? '●'.repeat(v) + '○'.repeat(5 - v) : '—')).join('')}${row('Investment', i => i.investment, (v, i) => v != null ? Money.fmt(v, i.currency, 0) : '—', false)}${row('Revenue / month', i => i.revenue, (v, i) => v != null ? Money.fmt(v, i.currency, 0) : '—')}${row('Expenses / month', i => i.expenses, (v, i) => v != null ? Money.fmt(v, i.currency, 0) : '—', false)}${row('Margin / month', Ideas.margin, (v, i) => v != null ? Money.fmt(v, i.currency, 0) : '—')}${row('Payback (months)', Ideas.payback, v => v ?? '—', false)}<tr><td class="faint">Status</td>${ids.map(i => `<td>${labelOf(IDEA_STATUS, i.status)}</td>`).join('')}</tr><tr><td class="faint">Industry</td>${ids.map(i => `<td>${U.esc(i.industry || '—')}</td>`).join('')}</tr><tr><td class="faint">Problem</td>${ids.map(i => `<td class="small">${U.esc(U.trunc(i.problem || '—', 140))}</td>`).join('')}</tr><tr><td class="faint">Main risk</td>${ids.map(i => `<td class="small">${U.esc(U.trunc(i.risks || '—', 140))}</td>`).join('')}</tr></tbody></table></div><p class="tiny faint mt-8">Highlighted values are the best in each row. Currency values are compared as entered.</p>` });
+    Modal.open({ title: 'Compare business ideas', size: 'xl', body: `<div class="table-wrap"><table class="tbl"><thead><tr><th></th>${ids.map(i => `<th style="min-width:160px">${U.esc(i.title)}</th>`).join('')}</tr></thead><tbody>${row('Overall score', Ideas.score, v => v == null ? '—' : v + '/100')}${labels.map(f => row(f.l, i => i[f.k] ? Number(i[f.k]) : null, v => v ? '●'.repeat(v) + '○'.repeat(5 - v) : '—')).join('')}${row('Investment', i => i.investment, (v, i) => v != null ? Money.fmt(v, i.currency, 0) : '—', false)}${row('Revenue / month', i => i.revenue, (v, i) => v != null ? Money.fmt(v, i.currency, 0) : '—')}${row('Expenses / month', i => i.expenses, (v, i) => v != null ? Money.fmt(v, i.currency, 0) : '—', false)}${row('Margin / month', Ideas.margin, (v, i) => v != null ? Money.fmt(v, i.currency, 0) : '—')}${row('Payback (months)', Ideas.payback, v => v ?? '—', false)}<tr><td class="faint">Status</td>${ids.map(i => `<td>${labelOf(IDEA_STATUS, i.status)}</td>`).join('')}</tr><tr><td class="faint">Category</td>${ids.map(i => `<td>${U.esc(i.category || '—')}</td>`).join('')}</tr><tr><td class="faint">Difficulty (1 easy – 5 hard)</td>${ids.map(i => `<td>${i.difficulty || '—'}</td>`).join('')}</tr><tr><td class="faint">Industry</td>${ids.map(i => `<td>${U.esc(i.industry || '—')}</td>`).join('')}</tr><tr><td class="faint">Problem</td>${ids.map(i => `<td class="small">${U.esc(U.trunc(i.problem || '—', 140))}</td>`).join('')}</tr><tr><td class="faint">Main risk</td>${ids.map(i => `<td class="small">${U.esc(U.trunc(i.risks || '—', 140))}</td>`).join('')}</tr></tbody></table></div><p class="tiny faint mt-8">Highlighted values are the best in each row. Currency values are compared as entered.</p>` });
   },
   'idea-project': el => { const i = Store.get('ideas', el.dataset.id); const p = Projects.fromIdea(i); Store.update('ideas', i.id, { status: 'converted' }); Toast.show('Project created from idea'); Router.go('#/projects/' + p.id); },
   'idea-biz': async el => { const i = Store.get('ideas', el.dataset.id); if (!(await Confirm(`Create a full business profile for “${i.title}”? Research, risks and opportunities are copied into the business plan.`, { ok: 'Create business', title: 'Convert to business' }))) return; const b = Biz.fromIdea(i); Store.update('ideas', i.id, { status: 'converted' }); if (i.investment) Store.add('bizTx', { businessId: b.id, kind: 'investment', amount: i.investment, currency: i.currency || b.currency, date: D.today(), category: 'Initial investment', description: 'Planned initial investment (from idea estimate)', status: 'unpaid' }); Toast.show('Business created'); Router.go('#/business/' + b.id); },
@@ -3090,7 +3417,7 @@ V.projects = {
     const p = Store.get('projects', id); if (!p) return H.empty('Project not found.', 'projects', '<a class="btn sm" href="#/projects">Back</a>'); Recent.add('projects', id);
     const s = ui('projdetail', { view: 'overview' }); if (r.q.view) { s.view = r.q.view; history.replaceState(null, '', '#/projects/' + id); }
     const ts = Projects.tasks(id); const pr = Projects.progress(p); const b = Store.get('businesses', p.businessId); const g = Store.get('goals', p.goalId); const spent = Projects.spent(p); const ms = p.milestones || [];
-    const head = `<div class="page-head"><div class="row top" style="gap:18px">${Chart.ring(pr, 72, 8, p.color || 'var(--accent)')}<div><div class="row wrap gap-6"><span class="badge">${U.esc(p.area || '')}</span>${priorityBadge(p.priority)}${b ? `<a class="badge accent" href="#/business/${b.id}">${I('briefcase', 'sm')}${U.esc(b.name)}</a>` : ''}${g ? `<a class="badge" href="#/goals/${g.id}">${I('target', 'sm')}${U.esc(U.trunc(g.title, 30))}</a>` : ''}</div><h1 class="mt-8">${U.esc(p.title)}</h1><p>${p.start ? D.fmt(p.start) : '—'} → ${p.deadline ? D.fmt(p.deadline) + ' (' + D.rel(p.deadline) + ')' : 'no deadline'}</p></div></div><div class="row wrap">${H.select('st', PROJECT_STATUS, p.status, `data-ch="proj-status" data-id="${id}"`)}<button class="btn" data-a="edit" data-c="projects" data-id="${id}">${I('edit', 'sm')}Edit</button><button class="btn ghost icon" data-a="proj-more" data-id="${id}">${I('more', 'sm')}</button></div></div>`;
+    const head = `<div class="page-head"><div class="row top" style="gap:18px">${Chart.ring(pr, 72, 8, p.color || 'var(--accent)')}<div><div class="row wrap gap-6"><span class="badge">${U.esc(p.area || '')}</span>${priorityBadge(p.priority)}${b ? `<a class="badge accent" href="#/business/${b.id}">${I('briefcase', 'sm')}${U.esc(b.name)}</a>` : ''}${g ? `<a class="badge" href="#/goals/${g.id}">${I('target', 'sm')}${U.esc(U.trunc(g.title, 30))}</a>` : ''}</div><h1 class="mt-8">${U.esc(p.title)}</h1><p>${p.start ? D.fmt(p.start) : '—'} → ${p.deadline ? D.fmt(p.deadline) + ' (' + D.rel(p.deadline) + ')' : 'no deadline'}</p></div></div><div class="row wrap">${H.select('st', PROJECT_STATUS, p.status, `data-ch="proj-status" data-id="${id}"`)}${PinUI.btns('projects', p)}<button class="btn" data-a="edit" data-c="projects" data-id="${id}">${I('edit', 'sm')}Edit</button><button class="btn ghost icon" data-a="proj-more" data-id="${id}">${I('more', 'sm')}</button></div></div>`;
     const tabs = H.tabs([['overview', 'Overview'], ['list', 'List'], ['board', 'Kanban'], ['calendar', 'Calendar'], ['timeline', 'Timeline']], s.view, 'proj-view');
     let body = '';
     if (s.view === 'overview') {
@@ -3342,6 +3669,7 @@ V.finance = {
       body = `<div class="toolbar"><b>Annual report</b>${H.select('y', [...new Set([D.today().slice(0, 4), ...Store.all('transactions').map(t => t.date.slice(0, 4))])].sort().reverse(), y, 'data-ch="fin-year"')}<button class="btn ghost sm right" onclick="window.print()">${I('printer', 'sm')}Print</button></div>
         <div class="grid g3 mb-16">${H.stat(`Income ${y}`, Money.fmt(U.sum(data, x => x.income)), '', 'up_trend', 'pos')}${H.stat(`Expenses ${y}`, Money.fmt(U.sum(data, x => x.expenses)), '', 'down_trend', 'neg')}${H.stat(`Net ${y}`, Money.fmt(U.sum(data, x => x.net)), '', 'wallet')}</div>
         <div class="grid g-side mb-16">${H.card('Net per month', Chart.mount('bar', { labels: months.map(x => D.fmt(x + '-01', 'mon')), series: [{ name: 'Net', values: data.map(x => x.net) }], height: 200 }))}${H.card('Top spending categories', Chart.hbars(cats.slice(0, 8).map(c => ({ ...c, display: Money.fmt(c.value, null, 0) }))) || '<div class="small faint">No expenses.</div>')}</div>
+        ${(() => { const pr = Finance.projection(12); return H.card('Financial projection · next 12 months', pr.hasData ? `<p class="small muted mb-12">What happens if your average monthly net of the last 3 months (${Money.fmt(pr.avg)}) continues. A simple extrapolation, not a forecast.</p>` + Chart.mount('line', { labels: pr.months.map(x => D.fmt(x.m + '-01', 'mon')), series: [{ name: 'Cumulative change in savings', values: pr.months.map(x => x.v) }], height: 200 }) : '<div class="small faint">Record at least one month of income and expenses to see a projection.</div>', { icon: 'up_trend', cls: 'mb-16' }); })()}
         <div class="table-wrap"><table class="tbl"><thead><tr><th>Month</th><th class="r">Income</th><th class="r">Expenses</th><th class="r">Net</th><th class="r">Savings rate</th></tr></thead><tbody>${data.map(x => `<tr><td>${D.fmt(x.mk + '-01', 'month')}</td><td class="r num">${Money.fmt(x.income)}</td><td class="r num">${Money.fmt(x.expenses)}</td><td class="r num ${x.net < 0 ? 'neg' : 'pos'}">${Money.fmt(x.net)}</td><td class="r num">${x.income ? U.pct(x.net, x.income) + '%' : '—'}</td></tr>`).join('')}</tbody></table></div>`;
     }
     return head + tabs + body;
@@ -3410,7 +3738,9 @@ V.analytics = {
         <div class="grid g4 mb-16">${H.stat('Tasks completed', totalDone, `${(totalDone / n).toFixed(1)} per day`, 'check')}${H.stat('Habit consistency', Math.round(U.avg(habit.filter((_, i) => Habits.dayRate(days[i]).n))) + '%', '', 'repeat')}${H.stat('Goals', `${goals.filter(g => g.status === 'achieved').length} achieved`, `${act.length} active · avg ${act.length ? Math.round(U.avg(act, Goals.progress)) : 0}%`, 'target')}${H.stat('Journal entries', Store.all('journal').filter(j => j.date >= days[0]).length, `in the last ${n} days`, 'journal')}</div>
         <div class="grid g2 mb-16">${H.card('Daily productivity — tasks completed vs created', Chart.mount('bar', { labels: lbl, series: [{ name: 'Completed', values: days.map(d => (doneBy[d] || []).length), color: '#10b981' }, { name: 'Created', values: days.map(d => (createdBy[d] || []).length), color: 'var(--accent)' }], height: 200, fmt: v => Math.round(v), tip: v => v + ' tasks' }))}${H.card('Habit consistency (% of scheduled habits done)', Chart.mount('line', { labels: lbl, series: [{ name: 'Habits', values: habit }], height: 200, fmt: v => Math.round(v) + '%', tip: v => v + '%' }))}</div>
         <div class="grid g3">${H.card('Weekly productivity', Chart.mount('bar', { labels: weeks.map(w => D.fmt(w, 'short')), series: [{ name: 'Tasks done', values: weeks.map(w => U.sum(D.range(w, D.add(w, 6)), d => (doneBy[d] || []).length)) }], height: 170, fmt: v => Math.round(v), tip: v => v + ' tasks' }))}${H.card('Study hours per week', Chart.mount('bar', { labels: weeks.map(w => D.fmt(w, 'short')), series: [{ name: 'Hours', values: weeks.map(w => Math.round(School.minutes(w, D.add(w, 6)) / 6) / 10), color: '#0ea5e9' }], height: 170, fmt: v => v.toFixed(0), tip: v => v + ' h' }))}${H.card('Journal activity per week', Chart.mount('bar', { labels: weeks.map(w => D.fmt(w, 'short')), series: [{ name: 'Entries', values: weeks.map(w => Store.all('journal').filter(j => j.date >= w && j.date <= D.add(w, 6)).length), color: '#8b5cf6' }], height: 170, fmt: v => Math.round(v), tip: v => v + ' entries' }))}</div>
-        <div class="grid g2 mt-16">${H.card('Goal progress by life category', (() => { const xs = LIFE_CATS.map(c => { const gs = act.filter(g => g.category === c); return gs.length ? { label: c, value: Math.round(U.avg(gs, Goals.progress)), max: 100, display: Math.round(U.avg(gs, Goals.progress)) + '%' } : null; }).filter(Boolean); return xs.length ? Chart.hbars(xs) : '<div class="small faint">No active goals.</div>'; })())}${H.card('Tasks completed by category', (() => { const c = {}; days.forEach(d => (doneBy[d] || []).forEach(t => c[t.category || 'Uncategorised'] = (c[t.category || 'Uncategorised'] || 0) + 1)); return Object.keys(c).length ? Chart.donut({ segments: Object.entries(c).map(([l, v]) => ({ label: l, value: v })), center: String(totalDone), centerSub: 'tasks', size: 130 }) : '<div class="small faint">No completed tasks in this period.</div>'; })())}</div>`;
+        <div class="grid g2 mt-16">${H.card('Goal progress by life category', (() => { const xs = LIFE_CATS.map(c => { const gs = act.filter(g => g.category === c); return gs.length ? { label: c, value: Math.round(U.avg(gs, Goals.progress)), max: 100, display: Math.round(U.avg(gs, Goals.progress)) + '%' } : null; }).filter(Boolean); return xs.length ? Chart.hbars(xs) : '<div class="small faint">No active goals.</div>'; })())}${H.card('Tasks completed by category', (() => { const c = {}; days.forEach(d => (doneBy[d] || []).forEach(t => c[t.category || 'Uncategorised'] = (c[t.category || 'Uncategorised'] || 0) + 1)); return Object.keys(c).length ? Chart.donut({ segments: Object.entries(c).map(([l, v]) => ({ label: l, value: v })), center: String(totalDone), centerSub: 'tasks', size: 130 }) : '<div class="small faint">No completed tasks in this period.</div>'; })())}</div>
+        ${(() => { const tsDay = ts => ts ? D.key(new Date(ts)) : ''; const rows = Finance.lastMonths(6).map(mk => { const end = D.monthEnd(mk + '-01') > td ? td : D.monthEnd(mk + '-01'); let msd = 0; Store.all('projects').forEach(p => (p.activity || []).forEach(a => { if (tsDay(a.ts).startsWith(mk) && /^Completed milestone/.test(a.text)) msd++; })); const hab = D.range(mk + '-01', end).map(Habits.dayRate); return [mk, Store.all('tasks').filter(t => tsDay(t.doneAt).startsWith(mk)).length, Store.all('goals').filter(g => tsDay(g.achievedAt).startsWith(mk)).length, msd, Store.all('projects').filter(p => p.status === 'completed' && tsDay(p.updatedAt).startsWith(mk)).length, Store.all('books').filter(b => (b.finished || '').startsWith(mk)).length, Store.all('workouts').filter(w => (w.date || '').startsWith(mk)).length, Math.round(School.minutes(mk + '-01', D.monthEnd(mk + '-01')) / 6) / 10, Store.all('journal').filter(j => (j.date || '').startsWith(mk)).length, U.sum(hab, x => x.n) ? U.pct(U.sum(hab, x => x.d), U.sum(hab, x => x.n)) + '%' : '—']; }).reverse();
+          return H.card('Monthly achievements', `<div class="table-wrap"><table class="tbl"><thead><tr><th>Month</th><th class="r">Tasks done</th><th class="r">Goals achieved</th><th class="r">Milestones</th><th class="r">Projects completed</th><th class="r">Books finished</th><th class="r">Workouts</th><th class="r">Study h</th><th class="r">Journal</th><th class="r">Habits</th></tr></thead><tbody>${rows.map(r => `<tr><td>${D.fmt(r[0] + '-01', 'month')}</td>${r.slice(1).map(v => `<td class="r num">${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`, { icon: 'star', cls: 'mt-16' }); })()}`;
     } else if (s.tab === 'business') {
       const bs = Store.all('businesses').filter(b => !b.archived); const months = Finance.lastMonths(12); const y = td.slice(0, 4); const base = Settings.get('currency');
       const tot = (mk, kind) => U.round2(U.sum(Store.all('bizTx').filter(x => x.kind === kind && x.status !== 'unpaid' && x.date && x.date.startsWith(mk) && bs.some(b => b.id === x.businessId)), x => Money.toBase(x.amount, x.currency || Biz.cur(x.businessId)) || 0));
